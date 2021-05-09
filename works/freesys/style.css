@@ -87,9 +87,11 @@ p {
           justify-content: center;
   border-radius: 10px;
   padding: 10px;
-  max-width: 305px;
+  width: 305px;
   font-weight: 600;
   margin-bottom: 10px;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 #main a:before {
@@ -110,6 +112,11 @@ p {
   background-image: url("img/mr.svg");
 }
 
+#main a.mr:hover {
+  -webkit-box-shadow: 0 0 10px #ffc700;
+          box-shadow: 0 0 10px #ffc700;
+}
+
 #main a.tg {
   background-color: #35ace0;
   color: #fff;
@@ -119,6 +126,11 @@ p {
   background-image: url("img/tg.svg");
 }
 
+#main a.tg:hover {
+  -webkit-box-shadow: 0 0 10px #35ace0;
+          box-shadow: 0 0 10px #35ace0;
+}
+
 #main a.vk {
   background-color: #4c6c91;
   color: #fff;
@@ -126,6 +138,11 @@ p {
 
 #main a.vk:before {
   background-image: url("img/vk.svg");
+}
+
+#main a.vk:hover {
+  -webkit-box-shadow: 0 0 10px #4c6c91;
+          box-shadow: 0 0 10px #4c6c91;
 }
 
 #main .add {
@@ -328,6 +345,8 @@ p {
   color: #fff;
   background-repeat: no-repeat;
   background-position: center;
+  -webkit-transition: .3s;
+  transition: .3s;
 }
 
 #modules .module:nth-child(1) {
@@ -340,6 +359,11 @@ p {
 
 #modules .module:nth-child(3) {
   background-image: url("img/bulat3.jpg");
+}
+
+#modules .module:hover {
+  -webkit-box-shadow: 15px -15px 0 rgba(0, 0, 0, 0.3);
+          box-shadow: 15px -15px 0 rgba(0, 0, 0, 0.3);
 }
 
 #modules .module h3 {

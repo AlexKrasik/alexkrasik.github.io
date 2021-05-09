@@ -74,9 +74,10 @@ p {
         justify-content: center;
         border-radius: 10px;
         padding: 10px;
-        max-width: 305px;
+        width: 305px;
         font-weight: 600;
         margin-bottom: 10px;
+        transition: 0.3s;
         &:before {
             content: "";
             height: 25px;
@@ -91,6 +92,9 @@ p {
             &:before {
                 background-image: url("img/mr.svg");
             }
+            &:hover {
+                box-shadow: 0 0 10px #ffc700;
+            }
         }
         &.tg {
             background-color: #35ace0;
@@ -98,12 +102,18 @@ p {
             &:before {
                 background-image: url("img/tg.svg");
             }
+            &:hover {
+                box-shadow: 0 0 10px #35ace0;
+            }
         }
         &.vk {
             background-color: #4c6c91;
             color: #fff;
             &:before {
                 background-image: url("img/vk.svg");
+            }
+            &:hover {
+                box-shadow: 0 0 10px #4c6c91;
             }
         }
     }
@@ -183,7 +193,6 @@ p {
             }
         }
     }
-
     @media (max-width: $tb) {
         .illustration {
             right: -300px;
@@ -275,6 +284,7 @@ p {
         color: #fff;
         background-repeat: no-repeat;
         background-position: center;
+        transition: 0.3s;
         &:nth-child(1) {
             background-image: url("img/bulat1.jpg");
         }
@@ -283,6 +293,9 @@ p {
         }
         &:nth-child(3) {
             background-image: url("img/bulat3.jpg");
+        }
+        &:hover {
+            box-shadow: 15px -15px 0 rgba(0, 0, 0, 0.3);
         }
         h3 {
             font-weight: bold;
