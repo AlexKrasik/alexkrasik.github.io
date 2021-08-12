@@ -7,6 +7,9 @@ $pearl: #eae6d3;
 $white: #e7e4da;
 $orange: #ff613a;
 $green: #00a388;
+* {
+    box-sizing: border-box;
+}
 html,
 body {
     margin: 0;
@@ -273,7 +276,7 @@ body {
         display: flex;
         justify-content: space-between;
         padding-top: 50px;
-        gap: 20px
+        gap: 20px;
     }
     &__item {
         color: $grey;
@@ -290,18 +293,20 @@ body {
             font-size: 18px;
         }
         &:nth-child(1) {
-            background-image: url('../img/format_star_yellow.svg');
+            background-image: url("../img/format_star_yellow.svg");
         }
         &:nth-child(2) {
-            background-image: url('../img/format_star_green.svg');
+            background-image: url("../img/format_star_green.svg");
         }
         &:nth-child(3) {
-            background-image: url('../img/format_star_orange.svg');
+            background-image: url("../img/format_star_orange.svg");
         }
     }
     @media (max-width: $sm) {
         background-color: white;
         &__heading {
+            font-size: 24px;
+            line-height: 140%;
             .outline {
                 color: white;
             }
