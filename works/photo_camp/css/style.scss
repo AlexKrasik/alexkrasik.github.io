@@ -311,18 +311,18 @@ body {
             padding-top: 30px;
         }
         &__item {
-            width: 300px;
+            width: 100%;
             padding-top: 5px;
             padding-left: 50px;
             margin-bottom: 20px;
             &-head {
                 text-transform: uppercase;
                 font-weight: 900;
-                font-size: 24px;
+                font-size: 18px;
             }
             &-text {
                 font-weight: 600;
-                font-size: 18px;
+                font-size: 14px;
             }
         }
     }
