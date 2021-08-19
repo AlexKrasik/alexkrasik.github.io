@@ -5,6 +5,7 @@ $(function () {
     });
     $('.get__video-play').click(function () {
         $('.popup-bg, .popup-window').show();
-        $(' .popup-window iframe').attr('src', 'https://www.youtube.com/embed/dQw4w9WgXcQ');
+        $(' .popup-window iframe').attr('src', 'https://www.youtube.com/embed/dQw4w9WgXcQ'); 
+        $(' .popup-window iframe').attr('', '');
     });
 });
