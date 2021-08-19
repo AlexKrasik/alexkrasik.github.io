@@ -1,3 +1,33 @@
+@font-face {
+  font-family: "Artegra Sans";
+  src: url("../fonts/ArtegraSans-ExtraBold.eot");
+  src: local("Artegra Sans ExtraBold"), local("ArtegraSans-ExtraBold"), url("../fonts/ArtegraSans-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/ArtegraSans-ExtraBold.woff2") format("woff2"), url("../fonts/ArtegraSans-ExtraBold.woff") format("woff"), url("../fonts/ArtegraSans-ExtraBold.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Artegra Sans";
+  src: url("../fonts/ArtegraSans-Black.eot");
+  src: local("Artegra Sans Black"), local("ArtegraSans-Black"), url("../fonts/ArtegraSans-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/ArtegraSans-Black.woff2") format("woff2"), url("../fonts/ArtegraSans-Black.woff") format("woff"), url("../fonts/ArtegraSans-Black.ttf") format("truetype");
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Artegra Sans";
+  src: url("../fonts/ArtegraSans-Bold.eot");
+  src: local("Artegra Sans Bold"), local("ArtegraSans-Bold"), url("../fonts/ArtegraSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/ArtegraSans-Bold.woff2") format("woff2"), url("../fonts/ArtegraSans-Bold.woff") format("woff"), url("../fonts/ArtegraSans-Bold.ttf") format("truetype");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Artegra Sans";
+  src: url("../fonts/ArtegraSans-SemiBold.eot");
+  src: local("Artegra Sans SemiBold"), local("ArtegraSans-SemiBold"), url("../fonts/ArtegraSans-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/ArtegraSans-SemiBold.woff2") format("woff2"), url("../fonts/ArtegraSans-SemiBold.woff") format("woff"), url("../fonts/ArtegraSans-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+}
+
 * {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -14,6 +44,7 @@ body {
   margin: 0 auto;
   padding: 0 15px;
   max-width: 1160px;
+  width: 100%;
 }
 
 @media (max-width: 959px) {
@@ -25,6 +56,44 @@ body {
 @media (max-width: 767px) {
   .container {
     max-width: 300px;
+  }
+}
+
+.left {
+  padding-left: calc(50vw - 580px - 15px);
+  -webkit-box-pack: right;
+      -ms-flex-pack: right;
+          justify-content: right;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media (max-width: 959px) {
+  .left {
+    padding-left: calc(50vw - 460px - 15px);
+  }
+}
+
+@media (max-width: 767px) {
+  .left {
+    padding-left: calc(50vw - 150px - 15px);
+  }
+}
+
+.right {
+  padding-right: calc(50vw - 580px - 15px);
+}
+
+@media (max-width: 959px) {
+  .right {
+    padding-right: calc(50vw - 460px - 15px);
+  }
+}
+
+@media (max-width: 767px) {
+  .right {
+    padding-right: calc(50vw - 150px - 15px);
   }
 }
 
@@ -76,7 +145,7 @@ body {
 }
 
 .header__runline-content .white {
-  color: #eae6d3;
+  color: #fefbf3;
   font-size: 28px;
 }
 
@@ -103,7 +172,7 @@ body {
 }
 
 .header__text {
-  color: #eae6d3;
+  color: #fefbf3;
   text-align: center;
   text-transform: uppercase;
   font-weight: 700;
@@ -191,22 +260,38 @@ body {
 
 .get {
   position: relative;
-  background-color: black;
-  background-image: url("../img/get_pioner.jpg");
-  background-position: calc(100% - 39vw) bottom;
-  background-repeat: no-repeat;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  min-height: 370px;
 }
 
 .get__black {
-  width: 100%;
-  height: 100%;
-  padding: 70px 0 60px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 60%;
+  background-color: black;
+  background-image: url("../img/get_pioner.jpg");
+  background-position: right bottom;
+  background-repeat: no-repeat;
 }
 
 .get__black-text {
   background-image: url("../img/get_arrows.svg");
   background-repeat: no-repeat;
+  background-position: 15px top;
+  text-shadow: 2px 2px 0 black;
+  -webkit-text-stroke: 1px black;
+  font-weight: 500;
   padding-top: 60px;
+  padding-left: 15px;
   max-width: 275px;
   color: #e7e4da;
   font-weight: 900;
@@ -215,7 +300,6 @@ body {
 }
 
 .get__video {
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -225,10 +309,7 @@ body {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  height: 100%;
   width: 40%;
-  top: 0;
-  right: 0;
   background-image: url("../img/get_bulat.jpg");
   background-position: center 30%;
   background-size: cover;
@@ -304,23 +385,20 @@ body {
   }
 }
 
-@media (max-width: 1359px) {
-  .get {
-    background-position: calc(100% - 38vw) bottom;
-    background-size: 400px;
-  }
-}
-
 @media (max-width: 959px) {
   .get {
-    background-position: right calc(100% - 200px);
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
   }
-  .get .container {
-    max-width: 100%;
+  .get__black {
+    width: 100%;
+    height: 370px;
   }
   .get__video {
     width: calc(100% + 30px);
-    height: 200px;
+    height: 300px;
     position: relative;
     margin: 0 -15px;
   }
@@ -347,7 +425,7 @@ body {
 
 .format {
   padding: 40px 0;
-  background-color: #eae6d3;
+  background-color: #fefbf3;
   letter-spacing: 0.025em;
 }
 
@@ -360,9 +438,9 @@ body {
 }
 
 .format__heading .outline {
-  color: #eae6d3;
+  color: #fefbf3;
   font-weight: 800;
-  text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
+  -webkit-text-stroke: 1px black;
 }
 
 .format__list {
@@ -441,33 +519,130 @@ body {
   }
 }
 
-@font-face {
-  font-family: "Artegra Sans";
-  src: url("../fonts/ArtegraSans-ExtraBold.eot");
-  src: local("Artegra Sans ExtraBold"), local("ArtegraSans-ExtraBold"), url("../fonts/ArtegraSans-ExtraBold.eot?#iefix") format("embedded-opentype"), url("../fonts/ArtegraSans-ExtraBold.woff2") format("woff2"), url("../fonts/ArtegraSans-ExtraBold.woff") format("woff"), url("../fonts/ArtegraSans-ExtraBold.ttf") format("truetype");
+.host {
+  background-color: #eee6db;
+  min-height: 605px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
 }
 
-@font-face {
-  font-family: "Artegra Sans";
-  src: url("../fonts/ArtegraSans-Black.eot");
-  src: local("Artegra Sans Black"), local("ArtegraSans-Black"), url("../fonts/ArtegraSans-Black.eot?#iefix") format("embedded-opentype"), url("../fonts/ArtegraSans-Black.woff2") format("woff2"), url("../fonts/ArtegraSans-Black.woff") format("woff"), url("../fonts/ArtegraSans-Black.ttf") format("truetype");
+.host .block {
+  width: 50%;
+  padding: 65px 0;
+  position: relative;
+}
+
+.host .bulat {
+  position: absolute;
+  width: 630px;
+  bottom: 0;
+  left: -100%;
+}
+
+.host__header {
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 48px;
+  text-transform: uppercase;
+}
+
+.host__header .outline {
+  color: #eee6db;
+  -webkit-text-stroke: 1px black;
+}
+
+.host__text {
   font-weight: 900;
-  font-style: normal;
+  font-size: 24px;
+  margin-top: 65px;
 }
 
-@font-face {
-  font-family: "Artegra Sans";
-  src: url("../fonts/ArtegraSans-Bold.eot");
-  src: local("Artegra Sans Bold"), local("ArtegraSans-Bold"), url("../fonts/ArtegraSans-Bold.eot?#iefix") format("embedded-opentype"), url("../fonts/ArtegraSans-Bold.woff2") format("woff2"), url("../fonts/ArtegraSans-Bold.woff") format("woff"), url("../fonts/ArtegraSans-Bold.ttf") format("truetype");
-  font-weight: bold;
-  font-style: normal;
+.host__text .price {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 130px;
+  height: 50px;
+  background-color: #ff613a;
+  border-radius: 30px;
+  color: #eee6db;
+  padding: 5px 10px 0;
+  margin-top: 25px;
 }
 
-@font-face {
-  font-family: "Artegra Sans";
-  src: url("../fonts/ArtegraSans-SemiBold.eot");
-  src: local("Artegra Sans SemiBold"), local("ArtegraSans-SemiBold"), url("../fonts/ArtegraSans-SemiBold.eot?#iefix") format("embedded-opentype"), url("../fonts/ArtegraSans-SemiBold.woff2") format("woff2"), url("../fonts/ArtegraSans-SemiBold.woff") format("woff"), url("../fonts/ArtegraSans-SemiBold.ttf") format("truetype");
-  font-weight: 600;
-  font-style: normal;
+.host a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 410px;
+  height: 70px;
+  border-radius: 35px;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #000;
+  color: #eee6db;
+  font-weight: 800;
+  font-size: 24px;
+  text-transform: uppercase;
+  text-decoration: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  margin-top: 70px;
+}
+
+.host a:hover {
+  background-color: #00a388;
+  -webkit-box-shadow: 0 0 15px 0 #00a388;
+          box-shadow: 0 0 15px 0 #00a388;
+}
+
+@media (max-width: 1359px) {
+  .host .bulat {
+    width: 550px;
+  }
+}
+
+@media (max-width: 959px) {
+  .host {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .host .bulat {
+    position: static;
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
+  .host__header {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+  }
+  .host__text {
+    -webkit-box-ordinal-group: 4;
+        -ms-flex-order: 3;
+            order: 3;
+  }
+  .host a {
+    -webkit-box-ordinal-group: 5;
+        -ms-flex-order: 4;
+            order: 4;
+  }
 }
 /*# sourceMappingURL=style.css.map */

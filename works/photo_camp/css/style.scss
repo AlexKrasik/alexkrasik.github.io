@@ -1,12 +1,55 @@
+@font-face {
+    font-family: "Artegra Sans";
+    src: url("../fonts/ArtegraSans-ExtraBold.eot");
+    src: local("Artegra Sans ExtraBold"), local("ArtegraSans-ExtraBold"),
+        url("../fonts/ArtegraSans-ExtraBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ArtegraSans-ExtraBold.woff2") format("woff2"),
+        url("../fonts/ArtegraSans-ExtraBold.woff") format("woff"),
+        url("../fonts/ArtegraSans-ExtraBold.ttf") format("truetype");
+}
+@font-face {
+    font-family: "Artegra Sans";
+    src: url("../fonts/ArtegraSans-Black.eot");
+    src: local("Artegra Sans Black"), local("ArtegraSans-Black"),
+        url("../fonts/ArtegraSans-Black.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ArtegraSans-Black.woff2") format("woff2"), url("../fonts/ArtegraSans-Black.woff") format("woff"),
+        url("../fonts/ArtegraSans-Black.ttf") format("truetype");
+    font-weight: 900;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Artegra Sans";
+    src: url("../fonts/ArtegraSans-Bold.eot");
+    src: local("Artegra Sans Bold"), local("ArtegraSans-Bold"),
+        url("../fonts/ArtegraSans-Bold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ArtegraSans-Bold.woff2") format("woff2"), url("../fonts/ArtegraSans-Bold.woff") format("woff"),
+        url("../fonts/ArtegraSans-Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+@font-face {
+    font-family: "Artegra Sans";
+    src: url("../fonts/ArtegraSans-SemiBold.eot");
+    src: local("Artegra Sans SemiBold"), local("ArtegraSans-SemiBold"),
+        url("../fonts/ArtegraSans-SemiBold.eot?#iefix") format("embedded-opentype"),
+        url("../fonts/ArtegraSans-SemiBold.woff2") format("woff2"),
+        url("../fonts/ArtegraSans-SemiBold.woff") format("woff"),
+        url("../fonts/ArtegraSans-SemiBold.ttf") format("truetype");
+    font-weight: 600;
+    font-style: normal;
+}
+
 $sm: 767px;
 $md: 959px;
 $lg: 1359px;
 
 $grey: #1a1a1a;
-$pearl: #eae6d3;
+$pearl: #fefbf3;
 $white: #e7e4da;
+$beige: #eee6db;
 $orange: #ff613a;
 $green: #00a388;
+
 * {
     box-sizing: border-box;
 }
@@ -20,11 +63,33 @@ body {
     margin: 0 auto;
     padding: 0 15px;
     max-width: 1160px;
+    width: 100%;
     @media (max-width: $md) {
         max-width: 920px;
     }
     @media (max-width: $sm) {
         max-width: 300px;
+    }
+}
+.left {
+    padding-left: calc(50vw - 580px - 15px);
+    justify-content: right;
+    display: flex;
+    @media (max-width: $md) {
+        padding-left: calc(50vw - 460px - 15px);
+    }
+    @media (max-width: $sm) {
+        padding-left: calc(50vw - 150px - 15px);
+    }
+}
+.right {
+    padding-right: calc(50vw - 580px - 15px);
+
+    @media (max-width: $md) {
+        padding-right: calc(50vw - 460px - 15px);
+    }
+    @media (max-width: $sm) {
+        padding-right: calc(50vw - 150px - 15px);
     }
 }
 .header {
@@ -154,18 +219,26 @@ body {
 }
 .get {
     position: relative;
-    background-color: black;
-    background-image: url("../img/get_pioner.jpg");
-    background-position: calc(100% - 39vw) bottom;
-    background-repeat: no-repeat;
+    display: flex;
+    align-items: stretch;
+    min-height: 370px;
     &__black {
-        width: 100%;
-        height: 100%;
-        padding: 70px 0 60px;
+        display: flex;
+        align-items: center;
+        width: 60%;
+        background-color: black;
+        background-image: url("../img/get_pioner.jpg");
+        background-position: right bottom;
+        background-repeat: no-repeat;
         &-text {
             background-image: url("../img/get_arrows.svg");
             background-repeat: no-repeat;
+            background-position: 15px top;
+            text-shadow: 2px 2px 0 black;
+            -webkit-text-stroke: 1px black;
+            font-weight: 500;
             padding-top: 60px;
+            padding-left: 15px;
             max-width: 275px;
             color: $white;
             font-weight: 900;
@@ -174,14 +247,10 @@ body {
         }
     }
     &__video {
-        position: absolute;
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 100%;
         width: 40%;
-        top: 0;
-        right: 0;
         background-image: url("../img/get_bulat.jpg");
         background-position: center 30%;
         background-size: cover;
@@ -223,18 +292,15 @@ body {
             }
         }
     }
-    @media (max-width: $lg) {
-        background-position: calc(100% - 38vw) bottom;
-        background-size: 400px;
-    }
     @media (max-width: $md) {
-        background-position: right calc(100% - 200px);
-        .container {
-            max-width: 100%;
+        flex-direction: column;
+        &__black {
+            width: 100%;
+            height: 370px;
         }
         &__video {
             width: calc(100% + 30px);
-            height: 200px;
+            height: 300px;
             position: relative;
             margin: 0 -15px;
         }
@@ -269,7 +335,7 @@ body {
         .outline {
             color: $pearl;
             font-weight: 800;
-            text-shadow: 1px 1px 0 black, 1px -1px 0 black, -1px 1px 0 black, -1px -1px 0 black;
+            -webkit-text-stroke: 1px black;
         }
     }
     &__list {
@@ -332,44 +398,88 @@ body {
         }
     }
 }
-
-@font-face {
-    font-family: "Artegra Sans";
-    src: url("../fonts/ArtegraSans-ExtraBold.eot");
-    src: local("Artegra Sans ExtraBold"), local("ArtegraSans-ExtraBold"),
-        url("../fonts/ArtegraSans-ExtraBold.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/ArtegraSans-ExtraBold.woff2") format("woff2"),
-        url("../fonts/ArtegraSans-ExtraBold.woff") format("woff"),
-        url("../fonts/ArtegraSans-ExtraBold.ttf") format("truetype");
-}
-@font-face {
-    font-family: "Artegra Sans";
-    src: url("../fonts/ArtegraSans-Black.eot");
-    src: local("Artegra Sans Black"), local("ArtegraSans-Black"),
-        url("../fonts/ArtegraSans-Black.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/ArtegraSans-Black.woff2") format("woff2"), url("../fonts/ArtegraSans-Black.woff") format("woff"),
-        url("../fonts/ArtegraSans-Black.ttf") format("truetype");
-    font-weight: 900;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Artegra Sans";
-    src: url("../fonts/ArtegraSans-Bold.eot");
-    src: local("Artegra Sans Bold"), local("ArtegraSans-Bold"),
-        url("../fonts/ArtegraSans-Bold.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/ArtegraSans-Bold.woff2") format("woff2"), url("../fonts/ArtegraSans-Bold.woff") format("woff"),
-        url("../fonts/ArtegraSans-Bold.ttf") format("truetype");
-    font-weight: bold;
-    font-style: normal;
-}
-@font-face {
-    font-family: "Artegra Sans";
-    src: url("../fonts/ArtegraSans-SemiBold.eot");
-    src: local("Artegra Sans SemiBold"), local("ArtegraSans-SemiBold"),
-        url("../fonts/ArtegraSans-SemiBold.eot?#iefix") format("embedded-opentype"),
-        url("../fonts/ArtegraSans-SemiBold.woff2") format("woff2"),
-        url("../fonts/ArtegraSans-SemiBold.woff") format("woff"),
-        url("../fonts/ArtegraSans-SemiBold.ttf") format("truetype");
-    font-weight: 600;
-    font-style: normal;
+.host {
+    background-color: $beige;
+    min-height: 605px;
+    display: flex;
+    justify-content: flex-end;
+    .block {
+        width: 50%;
+        padding: 65px 0;
+        position: relative;
+    }
+    .bulat {
+        position: absolute;
+        width: 630px;
+        bottom: 0;
+        left: -100%;
+    }
+    &__header {
+        font-weight: 800;
+        font-size: 40px;
+        line-height: 48px;
+        text-transform: uppercase;
+        .outline {
+            color: $beige;
+            -webkit-text-stroke: 1px black;
+        }
+    }
+    &__text {
+        font-weight: 900;
+        font-size: 24px;
+        margin-top: 65px;
+        .price {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+            width: 130px;
+            height: 50px;
+            background-color: $orange;
+            border-radius: 30px;
+            color: $beige;
+            padding: 5px 10px 0;
+            margin-top: 25px;
+        }
+    }
+    a {
+        display: flex;
+        width: 410px;
+        height: 70px;
+        border-radius: 35px;
+        justify-content: center;
+        align-items: center;
+        background-color: #000;
+        color: $beige;
+        font-weight: 800;
+        font-size: 24px;
+        text-transform: uppercase;
+        text-decoration: none;
+        transition: 0.3s;
+        margin-top: 70px;
+        &:hover {
+            background-color: $green;
+            box-shadow: 0 0 15px 0 $green;
+        }
+    }
+    @media (max-width: $lg) {
+        .bulat {
+            width: 550px;
+        }
+    }
+    @media (max-width: $md) {
+        flex-direction: column;
+        .bulat {
+            position: static;
+            order: 1;
+        }
+        &__header {
+            order: 2;
+        }
+        &__text {
+            order: 3;
+        }
+        a {
+            order: 4;
+        }
+    }
 }
