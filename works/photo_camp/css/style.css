@@ -395,23 +395,23 @@ body {
   .get__black {
     width: 100%;
     height: 370px;
+    background-image: url("../img/get_pioner_m.jpg");
+    background-position: right bottom;
+  }
+  .get__black-text {
+    -webkit-text-stroke: 0;
+    font-weight: 400;
   }
   .get__video {
-    width: calc(100% + 30px);
+    width: 100%;
     height: 300px;
-    position: relative;
-    margin: 0 -15px;
   }
 }
 
 @media (max-width: 767px) {
-  .get {
-    background-image: url("../img/get_pioner_m.jpg");
-    background-position: right calc(100% - 200px);
-    background-size: 260px;
-  }
   .get__black {
     padding: 20px 0 155px;
+    height: 350px;
   }
   .get__black-text {
     font-size: 12px;
@@ -538,7 +538,8 @@ body {
 
 .host .bulat {
   position: absolute;
-  width: 630px;
+  width: 100%;
+  max-width: 630px;
   bottom: 0;
   left: -100%;
 }
@@ -558,7 +559,7 @@ body {
 .host__text {
   font-weight: 900;
   font-size: 24px;
-  margin-top: 65px;
+  padding-top: 65px;
 }
 
 .host__text .price {
@@ -584,7 +585,8 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  width: 410px;
+  max-width: 410px;
+  width: 100%;
   height: 70px;
   border-radius: 35px;
   -webkit-box-pack: center;
@@ -612,7 +614,7 @@ body {
 
 @media (max-width: 1359px) {
   .host .bulat {
-    width: 550px;
+    max-width: 530px;
   }
 }
 
@@ -623,26 +625,68 @@ body {
         -ms-flex-direction: column;
             flex-direction: column;
   }
-  .host .bulat {
-    position: static;
-    -webkit-box-ordinal-group: 2;
-        -ms-flex-order: 1;
-            order: 1;
+  .host .block {
+    width: 100%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
   }
   .host__header {
+    font-size: 20px;
+    line-height: 24px;
+  }
+  .host .bulat {
+    position: static;
     -webkit-box-ordinal-group: 3;
         -ms-flex-order: 2;
             order: 2;
   }
+  .host__header {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+  }
   .host__text {
+    color: #eee6db;
+    height: 305px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
     -webkit-box-ordinal-group: 4;
         -ms-flex-order: 3;
             order: 3;
+    width: 100%;
+    padding-top: 30px;
+    background-color: #1a1a1a;
+    text-align: center;
+  }
+  .host__text .price {
+    margin-top: 40px;
   }
   .host a {
     -webkit-box-ordinal-group: 5;
         -ms-flex-order: 4;
             order: 4;
+    color: #1a1a1a;
+    background-color: #eee6db;
+    width: 280px;
+    height: 60px;
+    font-size: 18px;
+    margin-top: 30px;
   }
 }
 /*# sourceMappingURL=style.css.map */
