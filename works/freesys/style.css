@@ -90,8 +90,8 @@ p {
   width: 305px;
   font-weight: 600;
   margin-bottom: 10px;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 #main a:before {
@@ -345,8 +345,8 @@ p {
   color: #fff;
   background-repeat: no-repeat;
   background-position: center;
-  -webkit-transition: .3s;
-  transition: .3s;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
 }
 
 #modules .module:nth-child(1) {
