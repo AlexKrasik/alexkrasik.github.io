@@ -6,11 +6,14 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ФОТОЛАГЕРЬ</title>
-    <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css">
+    <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/latest/normalize.css"> -->
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/popup.css">
+    <link rel="stylesheet" href="css/animate.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <script src="js/wow.min.js"></script>
     <script src="js/script.js"></script>
 </head>
 
@@ -55,10 +58,10 @@
             </div>
         </div>
         <div class="container">
-            <div class="header__text">
+            <div class="header__text wow fadeIn">
                 Ты готов за 3 дня <br>
                 составить план, как стать востребованным фотографом, уделяя продвижению <br>
-                <div class="accent">
+                <div class="accent wow fadeIn" data-wow-delay=".5s"> 
                     всего 30 минут в день?
                 </div>
             </div>
@@ -66,14 +69,14 @@
     </header>
     <section class="get">
         <div class="get__black left">
-            <div class="get__black-text">
+            <div class="get__black-text wow slideInUp" data-wow-offset="100">
                 Ты получишь пошаговый план, как тебе продвигаться и продавать свои услуги, не потеряв в себе
                 творческую
                 личность
             </div>
         </div>
         <div class="get__video">
-            <a href="#" class="get__video-play"></a>
+            <a href="#" class="get__video-play wow pulse infinite"></a>
         </div>
     </section>
     <section class="format">
@@ -85,7 +88,7 @@
                 каждый день
             </div>
             <div class="format__list">
-                <div class="format__item">
+                <div class="format__item wow slideInUp" data-wow-delay=".1s">
                     <div class="format__item-head">
                         утром
                     </div>
@@ -93,7 +96,7 @@
                         Утренняя лагерная зарядка для мозгов
                     </div>
                 </div>
-                <div class="format__item">
+                <div class="format__item wow slideInUp" data-wow-delay=".3s">
                     <div class="format__item-head">
                         днем
                     </div>
@@ -101,7 +104,7 @@
                         Уроки и задания для продвижения
                     </div>
                 </div>
-                <div class="format__item">
+                <div class="format__item wow slideInUp" data-wow-delay=".5s">
                     <div class="format__item-head">
                         вечером
                     </div>
@@ -112,7 +115,6 @@
             </div>
         </div>
     </section>
-
     <section class="host">
         <div class="block">
             <div class="host__header">
@@ -121,7 +123,7 @@
                     Булат Алеев
                 </div>
             </div>
-            <img class="bulat" src="img/host_bulat.png" alt="Булат Алеев">
+            <img class="bulat wow slideInUp" data-wow-delay='.2s' src="img/host_bulat.png" alt="Булат Алеев">
             <div class="host__text">
                 ОРГВЗНОС <br>
                 ДО 10 ИЮЛЯ <br>
@@ -132,9 +134,6 @@
             </div>
         </div>
     </section>
-
-
-
 
     <div class="popup-bg">
         <div class="popup-window">

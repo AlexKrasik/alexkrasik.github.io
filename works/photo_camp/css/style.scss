@@ -227,8 +227,9 @@ body {
         width: 60%;
         background-color: black;
         background-image: url("../img/get_pioner.jpg");
-        background-position: right bottom;
+        background-position: 200% bottom;
         background-repeat: no-repeat;
+        animation: bg_slideIn .5s linear 1s; 
         &-text {
             background-image: url("../img/get_arrows.svg");
             background-repeat: no-repeat;
@@ -265,30 +266,22 @@ body {
             background-repeat: no-repeat;
             background-position: center;
             transition: 0.1s;
-            animation: pulse 1s ease-in-out 0s infinite alternate;
         }
         &-play:hover {
             width: 80px;
             height: 80px;
             border: 1px solid rgba(231, 228, 218, 0.05);
             background-size: 24px;
-            animation: pulse1 0.5s ease-in-out 0s infinite alternate;
         }
-        @keyframes pulse {
-            from {
-                transform: scale(1);
-            }
-            to {
-                transform: scale(1.2);
-            }
-        }
-        @keyframes pulse1 {
-            from {
-                transform: scale(1.2);
-            }
-            to {
-                transform: scale(1.4);
-            }
+
+    }
+    
+    @keyframes bg_slideIn {
+        from {
+            background-position: 200% bottom;
+        } 
+        to {
+            background-position: 100% bottom;
         }
     }
     @media (max-width: $md) {
@@ -477,6 +470,7 @@ body {
             display: flex;
             flex-direction: column;
             align-items: center;
+            padding: 65px 0 0;
         }
         &__header {
             font-size: 20px;

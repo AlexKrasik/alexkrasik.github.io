@@ -279,8 +279,10 @@ body {
   width: 60%;
   background-color: black;
   background-image: url("../img/get_pioner.jpg");
-  background-position: right bottom;
+  background-position: 200% bottom;
   background-repeat: no-repeat;
+  -webkit-animation: bg_slideIn .5s linear 1s;
+          animation: bg_slideIn .5s linear 1s;
 }
 
 .get__black-text {
@@ -328,8 +330,6 @@ body {
   background-position: center;
   -webkit-transition: 0.1s;
   transition: 0.1s;
-  -webkit-animation: pulse 1s ease-in-out 0s infinite alternate;
-          animation: pulse 1s ease-in-out 0s infinite alternate;
 }
 
 .get__video-play:hover {
@@ -337,51 +337,23 @@ body {
   height: 80px;
   border: 1px solid rgba(231, 228, 218, 0.05);
   background-size: 24px;
-  -webkit-animation: pulse1 0.5s ease-in-out 0s infinite alternate;
-          animation: pulse1 0.5s ease-in-out 0s infinite alternate;
 }
 
-@-webkit-keyframes pulse {
+@-webkit-keyframes bg_slideIn {
   from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    background-position: 200% bottom;
   }
   to {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
+    background-position: 100% bottom;
   }
 }
 
-@keyframes pulse {
+@keyframes bg_slideIn {
   from {
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    background-position: 200% bottom;
   }
   to {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-}
-
-@-webkit-keyframes pulse1 {
-  from {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  to {
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
-  }
-}
-
-@keyframes pulse1 {
-  from {
-    -webkit-transform: scale(1.2);
-            transform: scale(1.2);
-  }
-  to {
-    -webkit-transform: scale(1.4);
-            transform: scale(1.4);
+    background-position: 100% bottom;
   }
 }
 
@@ -637,6 +609,7 @@ body {
     -webkit-box-align: center;
         -ms-flex-align: center;
             align-items: center;
+    padding: 65px 0 0;
   }
   .host__header {
     font-size: 20px;
