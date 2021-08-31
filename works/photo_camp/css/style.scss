@@ -227,6 +227,7 @@ body {
     background-color: $green;
     &__black {
         display: flex;
+        justify-content: left;
         align-items: center;
         width: 60%;
         background-color: black;
@@ -559,7 +560,7 @@ body {
     }
     &__bulat {
         width: 50%;
-        background-image: linear-gradient(#0000,#0000 60%,#000c), url(../img/easy_bulat.jpg);
+        background-image: linear-gradient(#0000, #0000 60%, #000c), url(../img/easy_bulat.jpg);
         background-size: cover;
         background-position: center;
 
@@ -577,10 +578,10 @@ body {
             line-height: 125%;
         }
     }
-    @media (max-width:$md) {
+    @media (max-width: $md) {
         &__text {
             padding-left: 15px;
-            .heading { 
+            .heading {
                 font-size: 22px;
                 margin-bottom: 25px;
                 .accent {
@@ -604,7 +605,7 @@ body {
             }
         }
     }
-    @media (max-width:$sm) {
+    @media (max-width: $sm) {
         flex-direction: column;
         &__bulat {
             width: 100%;
@@ -612,6 +613,146 @@ body {
         }
         &__text {
             width: 100%;
+        }
+    }
+}
+.success {
+    background-color: $grey;
+    color: $white;
+    max-height: 895px;
+    overflow-y: hidden;
+    .content {
+        display: flex;
+        justify-content: space-between;
+    }
+    .text {
+        padding: 70px 0;
+        max-width: 500px;
+        &__big {
+            font-size: 28px;
+            line-height: 140%;
+            text-transform: uppercase;
+            margin: 20px 0;
+        }
+        &__quote {
+            position: relative;
+            max-width: 500px;
+            margin: 40px 0;
+            &::after,
+            &::before {
+                display: inline;
+                position: absolute;
+                color: #2b2a2a;
+                font-size: 72px;
+                font-family: sans-serif;
+                font-weight: 900;
+            }
+            &::before {
+                content: "«";
+                top: -10px;
+                left: -10px;
+                transform: translateX(-100%);
+            }
+            &::after {
+                content: "»";
+                top: none;
+                right: 20px;
+                bottom: 10px;
+                transform: translateX(100%);
+            }
+        }
+        .accent {
+            font-size: 28px;
+            background-color: $green;
+            max-width: 485px;
+            padding: 10px 5px 5px;
+        }
+        .dedline {
+            display: flex;
+            align-items: center;
+            text-transform: uppercase;
+            font-size: 18px;
+            &__price {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                background-color: $green;
+                border-radius: 100px;
+                width: 155px;
+                height: 50px;
+                color: $grey;
+                font-size: 24px;
+                font-weight: 900;
+                margin-left: 10px;
+            }
+        }
+        a {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            max-width: 400px;
+            height: 70px;
+            border: 5px solid $green;
+            border-radius: 100px;
+            text-decoration: none;
+            text-transform: uppercase;
+            color: $white;
+            transition: .3s;
+            font-size: 24px;
+            margin-top: 45px;
+        }
+        a:hover {
+            background-color: $green;
+            color: $grey;
+
+        }
+    }
+    .float {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        &__text {
+            text-orientation: mixed;
+            writing-mode: vertical-lr;
+            transform: rotate(-180deg);
+            text-transform: uppercase;
+            line-height: 140%;
+            font-weight: 800;
+        }
+        .outline {
+            color: $grey;
+            -webkit-text-stroke: 1px $beige;
+        }
+        .green {
+            color: $green;
+        }
+        span {
+            -webkit-text-stroke: none;
+            color: $beige;
+        }
+        .text1 {
+            font-size: 64px;
+            animation: 3s ease-in-out -1s infinite alternate flow1;
+        }
+        .text2 {
+            font-size: 70px;
+            animation: 3s ease-in-out -2s infinite alternate flow2;
+        }
+        .text3 {
+            font-size: 120px;
+            animation: 3s ease-in-out -3s infinite alternate flow3;
+        }
+        @keyframes flow1{
+            from {transform: rotate(-180deg) translateY(-30px);}
+            to {transform: rotate(-180deg) translateY(30px);}
+        }
+        @keyframes flow2{
+            from {transform: rotate(-180deg) translateY(30px);}
+            to {transform: rotate(-180deg) translateY(-30px);;}
+        }
+        @keyframes flow3{
+            from {transform: rotate(-180deg) translateY(-30px);}
+            to {transform: rotate(-180deg) translateY(30px);}
         }
     }
 }

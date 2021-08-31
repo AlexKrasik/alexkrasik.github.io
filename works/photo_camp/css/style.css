@@ -1,3 +1,4 @@
+@charset "UTF-8";
 @font-face {
   font-family: "Artegra Sans";
   src: url("../fonts/ArtegraSans-ExtraBold.eot");
@@ -277,6 +278,9 @@ body {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-pack: left;
+      -ms-flex-pack: left;
+          justify-content: left;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -793,6 +797,252 @@ body {
   }
   .easy__text {
     width: 100%;
+  }
+}
+
+.success {
+  background-color: #1a1a1a;
+  color: #e7e4da;
+  max-height: 895px;
+  overflow-y: hidden;
+}
+
+.success .content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.success .text {
+  padding: 70px 0;
+  max-width: 500px;
+}
+
+.success .text__big {
+  font-size: 28px;
+  line-height: 140%;
+  text-transform: uppercase;
+  margin: 20px 0;
+}
+
+.success .text__quote {
+  position: relative;
+  max-width: 500px;
+  margin: 40px 0;
+}
+
+.success .text__quote::after, .success .text__quote::before {
+  display: inline;
+  position: absolute;
+  color: #2b2a2a;
+  font-size: 72px;
+  font-family: sans-serif;
+  font-weight: 900;
+}
+
+.success .text__quote::before {
+  content: "«";
+  top: -10px;
+  left: -10px;
+  -webkit-transform: translateX(-100%);
+          transform: translateX(-100%);
+}
+
+.success .text__quote::after {
+  content: "»";
+  top: none;
+  right: 20px;
+  bottom: 10px;
+  -webkit-transform: translateX(100%);
+          transform: translateX(100%);
+}
+
+.success .text .accent {
+  font-size: 28px;
+  background-color: #00a388;
+  max-width: 485px;
+  padding: 10px 5px 5px;
+}
+
+.success .text .dedline {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.success .text .dedline__price {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  background-color: #00a388;
+  border-radius: 100px;
+  width: 155px;
+  height: 50px;
+  color: #1a1a1a;
+  font-size: 24px;
+  font-weight: 900;
+  margin-left: 10px;
+}
+
+.success .text a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 400px;
+  height: 70px;
+  border: 5px solid #00a388;
+  border-radius: 100px;
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #e7e4da;
+  -webkit-transition: .3s;
+  transition: .3s;
+  font-size: 24px;
+  margin-top: 45px;
+}
+
+.success .text a:hover {
+  background-color: #00a388;
+  color: #1a1a1a;
+}
+
+.success .float {
+  width: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.success .float__text {
+  text-orientation: mixed;
+  -webkit-writing-mode: vertical-lr;
+      -ms-writing-mode: tb-lr;
+          writing-mode: vertical-lr;
+  -webkit-transform: rotate(-180deg);
+          transform: rotate(-180deg);
+  text-transform: uppercase;
+  line-height: 140%;
+  font-weight: 800;
+}
+
+.success .float .outline {
+  color: #1a1a1a;
+  -webkit-text-stroke: 1px #eee6db;
+}
+
+.success .float .green {
+  color: #00a388;
+}
+
+.success .float span {
+  -webkit-text-stroke: none;
+  color: #eee6db;
+}
+
+.success .float .text1 {
+  font-size: 64px;
+  -webkit-animation: 3s ease-in-out -1s infinite alternate flow1;
+          animation: 3s ease-in-out -1s infinite alternate flow1;
+}
+
+.success .float .text2 {
+  font-size: 70px;
+  -webkit-animation: 3s ease-in-out -2s infinite alternate flow2;
+          animation: 3s ease-in-out -2s infinite alternate flow2;
+}
+
+.success .float .text3 {
+  font-size: 120px;
+  -webkit-animation: 3s ease-in-out -3s infinite alternate flow3;
+          animation: 3s ease-in-out -3s infinite alternate flow3;
+}
+
+@-webkit-keyframes flow1 {
+  from {
+    -webkit-transform: rotate(-180deg) translateY(-30px);
+            transform: rotate(-180deg) translateY(-30px);
+  }
+  to {
+    -webkit-transform: rotate(-180deg) translateY(30px);
+            transform: rotate(-180deg) translateY(30px);
+  }
+}
+
+@keyframes flow1 {
+  from {
+    -webkit-transform: rotate(-180deg) translateY(-30px);
+            transform: rotate(-180deg) translateY(-30px);
+  }
+  to {
+    -webkit-transform: rotate(-180deg) translateY(30px);
+            transform: rotate(-180deg) translateY(30px);
+  }
+}
+
+@-webkit-keyframes flow2 {
+  from {
+    -webkit-transform: rotate(-180deg) translateY(30px);
+            transform: rotate(-180deg) translateY(30px);
+  }
+  to {
+    -webkit-transform: rotate(-180deg) translateY(-30px);
+            transform: rotate(-180deg) translateY(-30px);
+  }
+}
+
+@keyframes flow2 {
+  from {
+    -webkit-transform: rotate(-180deg) translateY(30px);
+            transform: rotate(-180deg) translateY(30px);
+  }
+  to {
+    -webkit-transform: rotate(-180deg) translateY(-30px);
+            transform: rotate(-180deg) translateY(-30px);
+  }
+}
+
+@-webkit-keyframes flow3 {
+  from {
+    -webkit-transform: rotate(-180deg) translateY(-30px);
+            transform: rotate(-180deg) translateY(-30px);
+  }
+  to {
+    -webkit-transform: rotate(-180deg) translateY(30px);
+            transform: rotate(-180deg) translateY(30px);
+  }
+}
+
+@keyframes flow3 {
+  from {
+    -webkit-transform: rotate(-180deg) translateY(-30px);
+            transform: rotate(-180deg) translateY(-30px);
+  }
+  to {
+    -webkit-transform: rotate(-180deg) translateY(30px);
+            transform: rotate(-180deg) translateY(30px);
   }
 }
 /*# sourceMappingURL=style.css.map */
