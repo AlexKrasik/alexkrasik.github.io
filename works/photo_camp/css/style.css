@@ -411,6 +411,7 @@ body {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
+    height: auto;
   }
   .get__black {
     width: 100%;
@@ -1277,8 +1278,8 @@ body {
 
 @media (max-width: 1359px) {
   .scheldue {
-    background-image: -webkit-gradient(linear, left top, left bottom, from(#eee6dbb0), to(#eee6db)), url("../img/scheldue_bg.jpg");
-    background-image: linear-gradient(180deg, #eee6dbb0, #eee6db), url("../img/scheldue_bg.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(238, 230, 219, 0.7)), to(#eee6db)), url("../img/scheldue_bg.jpg");
+    background-image: linear-gradient(180deg, rgba(238, 230, 219, 0.7), #eee6db), url("../img/scheldue_bg.jpg");
     background-position: center top;
     background-size: cover;
   }
