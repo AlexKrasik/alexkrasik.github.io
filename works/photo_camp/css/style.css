@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800;900&display=swap");
 @font-face {
   font-family: "Artegra Sans";
@@ -868,32 +867,29 @@ body {
 
 .success .text__quote {
   position: relative;
-  max-width: 500px;
+  max-width: 490px;
   margin: 40px 0;
 }
 
 .success .text__quote::after, .success .text__quote::before {
-  display: inline;
+  content: "";
   position: absolute;
-  color: #2b2a2a;
-  font-size: 72px;
-  font-family: sans-serif;
-  font-weight: 900;
+  width: 45px;
+  height: 45px;
+  background-image: url("../img/arrows.svg");
 }
 
 .success .text__quote::before {
-  content: "«";
-  top: -10px;
-  left: -10px;
-  -webkit-transform: translateX(-100%);
-          transform: translateX(-100%);
+  top: -5px;
+  left: -15px;
+  -webkit-transform: translateX(-100%) rotate(180deg);
+          transform: translateX(-100%) rotate(180deg);
 }
 
 .success .text__quote::after {
-  content: "»";
   top: unset;
   right: 0px;
-  bottom: 10px;
+  bottom: 2px;
   -webkit-transform: translateX(100%);
           transform: translateX(100%);
 }
@@ -958,7 +954,8 @@ body {
   margin-top: 45px;
 }
 
-.success .text a:hover {
+.success .text a:hover,
+.success .text a:active {
   background-color: #00a388;
   color: #1a1a1a;
 }
@@ -1130,6 +1127,208 @@ body {
   }
   .success .text a {
     font-size: 18px;
+  }
+}
+
+.scheldue {
+  background-color: #eee6db;
+  background-image: url("../img/scheldue_bg.jpg");
+  background-repeat: no-repeat;
+  background-position-x: calc(50% - 550px);
+  padding: 40px 0 50px;
+}
+
+.scheldue .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+.scheldue .content {
+  padding-left: 500px;
+}
+
+.scheldue .del {
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.28);
+  margin: 15px 0;
+}
+
+.scheldue__header {
+  font-size: 36px;
+  text-transform: uppercase;
+  margin-bottom: 50px;
+}
+
+.scheldue__line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 15px 0;
+}
+
+.scheldue__text {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 0px;
+          flex: 1 0 0;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 120%;
+}
+
+.scheldue__text.first {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 200px;
+          flex: 0 0 200px;
+}
+
+.scheldue__text.big {
+  font-weight: 900;
+  font-size: 24px;
+  text-transform: uppercase;
+}
+
+.scheldue__text.sub {
+  font-weight: bold;
+  font-size: 24px;
+}
+
+.scheldue__text.plus {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.scheldue__text .icon {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background-color: #1a1a1a;
+  color: white;
+  font-weight: bold;
+  font-size: 24px;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 50px;
+          flex: 0 0 50px;
+  margin-right: 25px;
+}
+
+.scheldue a {
+  position: relative;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  max-width: 545px;
+  height: 75px;
+  margin-top: 35px;
+  border: 5px solid #ff613a;
+  border-radius: 50px;
+  color: #1a1a1a;
+  text-decoration: none;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 800;
+  font-size: 24px;
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+}
+
+.scheldue a:hover, .scheldue a:active {
+  text-decoration: none;
+  background-color: #ff613a;
+  color: white;
+}
+
+.scheldue a::after {
+  content: "";
+  position: absolute;
+  width: 45px;
+  height: 45px;
+  right: -35px;
+  top: 50%;
+  background-image: url("../img/arrows.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  -webkit-transform: translate(100%, -50%) rotate(180deg);
+          transform: translate(100%, -50%) rotate(180deg);
+}
+
+@media (max-width: 1359px) {
+  .scheldue {
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#eee6dbb0), to(#eee6db)), url("../img/scheldue_bg.jpg");
+    background-image: linear-gradient(180deg, #eee6dbb0, #eee6db), url("../img/scheldue_bg.jpg");
+    background-position: center top;
+    background-size: cover;
+  }
+  .scheldue .container {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .scheldue .content {
+    padding: 0;
+  }
+  .scheldue__header {
+    text-align: center;
+  }
+  .scheldue__line {
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    padding: 8px 0;
+  }
+  .scheldue__text {
+    font-size: 14px;
+  }
+  .scheldue__text.first {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 70px;
+            flex: 0 0 70px;
+  }
+  .scheldue__text.big, .scheldue__text.sub {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 100%;
+            flex: 0 0 100%;
+  }
+  .scheldue__text.big {
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  .scheldue__text.sub {
+    font-size: 18px;
+  }
+  .scheldue a {
+    font-size: 18px;
+    margin: 70px auto 0;
+  }
+  .scheldue a::after {
+    width: 33px;
+    height: 33px;
+    top: -50px;
+    right: 50%;
+    -webkit-transform: translate(50%, 0%) rotate(90deg);
+            transform: translate(50%, 0%) rotate(90deg);
   }
 }
 /*# sourceMappingURL=style.css.map */
