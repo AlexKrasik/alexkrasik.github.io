@@ -761,6 +761,7 @@ body {
             text-transform: uppercase;
             line-height: 140%;
             font-weight: 800;
+            width: min-content;
         }
         .outline {
             color: $grey;
@@ -1087,6 +1088,11 @@ body {
     
     @media (max-width: $lg) {
         background-position: left bottom;
+        .runline {
+            &-content {
+                min-width: 200px;
+            }
+        }
 
     }
     @media (max-width: $md) {
@@ -1117,6 +1123,10 @@ body {
             &__small {
                 font-size: 14px;
             } 
+            a {
+                height: 50px;
+                font-size: 16px;
+            }
         }
     }
     @media (max-width: $sm) {

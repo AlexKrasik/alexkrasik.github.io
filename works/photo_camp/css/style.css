@@ -1011,6 +1011,9 @@ body {
   text-transform: uppercase;
   line-height: 140%;
   font-weight: 800;
+  width: -webkit-min-content;
+  width: -moz-min-content;
+  width: min-content;
 }
 
 .success .float .outline {
@@ -1484,6 +1487,9 @@ body {
   .orgsbor {
     background-position: left bottom;
   }
+  .orgsbor .runline-content {
+    min-width: 200px;
+  }
 }
 
 @media (max-width: 959px) {
@@ -1515,6 +1521,10 @@ body {
   }
   .orgsbor .text__small {
     font-size: 14px;
+  }
+  .orgsbor .text a {
+    height: 50px;
+    font-size: 16px;
   }
 }
 
