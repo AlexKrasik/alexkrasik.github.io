@@ -799,8 +799,8 @@ a.button:hover {
 #results .slider-wrap {
   width: 2560px;
   margin-left: calc((100vw - 2560px) / 2);
-  padding: 70px 0;
-  background-image: radial-gradient(circle at 50% 300px, #FFCC7F, rgba(255, 255, 255, 0) 300px);
+  padding: 70px 0 0;
+  background-image: radial-gradient(circle at 50% 200px, #FFCC7F, #FFCC7F 100px, rgba(255, 255, 255, 0) 200px);
   background-position: center top;
 }
 
