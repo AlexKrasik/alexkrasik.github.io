@@ -800,7 +800,7 @@ a.button:hover {
   width: 2560px;
   margin-left: calc((100vw - 2560px) / 2);
   padding-top: 70px;
-  background-image: radial-gradient(circle at center, #FFCC7F, transparent 300px);
+  background-image: radial-gradient(circle at 50% 300px, #FFCC7F, transparent 300px);
   background-position: center top;
 }
 
