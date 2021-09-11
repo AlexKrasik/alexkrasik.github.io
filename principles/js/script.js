@@ -6,6 +6,7 @@ $(document).ready(function () {
         centerMode: true,
         prevArrow: '.slider-controls .prev',
         nextArrow: '.slider-controls .next',
+        touchThreshold: 15,
     });
     $(slider).on('afterChange', function (event, slick, currentSlide, nextSlide) {
         currentSlide += 1;
