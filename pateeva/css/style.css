@@ -4,6 +4,7 @@
   src: local("Akrobat"), local("Akrobat-Regular"), url("../fonts/Akrobat.woff2") format("woff2"), url("../fonts/Akrobat.woff") format("woff"), url("../fonts/Akrobat.ttf") format("truetype");
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -11,6 +12,7 @@
   src: local("Akrobat SemiBold"), local("Akrobat-SemiBold"), url("../fonts/Akrobatsemibold.woff2") format("woff2"), url("../fonts/Akrobatsemibold.woff") format("woff"), url("../fonts/Akrobatsemibold.ttf") format("truetype");
   font-weight: 600;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -18,6 +20,7 @@
   src: local("Akrobat Bold"), local("Akrobat-Bold"), url("../fonts/Akrobatbold.woff2") format("woff2"), url("../fonts/Akrobatbold.woff") format("woff"), url("../fonts/Akrobatbold.ttf") format("truetype");
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -25,6 +28,7 @@
   src: local("Akrobat ExtraBold"), local("Akrobat-ExtraBold"), url("../fonts/Akrobatextrabold.woff2") format("woff2"), url("../fonts/Akrobatextrabold.woff") format("woff"), url("../fonts/Akrobatextrabold.ttf") format("truetype");
   font-weight: 800;
   font-style: normal;
+  font-display: swap;
 }
 
 * {
@@ -126,6 +130,12 @@ h2 {
 @media screen and (max-width: 1160px) {
   .side__text {
     font-size: 8px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .side {
+    right: 0;
   }
 }
 
@@ -303,12 +313,6 @@ a:focus {
   padding-top: 85px;
 }
 
-#foryou .foryou__header {
-  max-width: 600px;
-  margin: 0 auto;
-  font-size: 58px;
-}
-
 #foryou .foryou__blocks {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -430,7 +434,6 @@ a:focus {
 
 #learn h2 {
   max-width: 480px;
-  font-size: 58px;
 }
 
 #learn .learn__blocks {
@@ -887,6 +890,8 @@ a:focus {
   }
   #host .host__factm {
     display: block;
+    font-size: 18px;
+    font-weight: 600;
   }
   #host .host__factm .count {
     color: #5e2c69;
@@ -903,9 +908,15 @@ a:focus {
     max-width: 100%;
   }
   #host .host__text {
-    font-size: 18px;
+    font-size: 16px;
     max-width: 100%;
   }
+  #host .link-wrapper {
+    text-align: center;
+  }
+}
+
+@media screen and (max-width: 767px) {
   #host .host__name {
     font-size: 30px;
     padding-left: 20px;
@@ -913,9 +924,6 @@ a:focus {
   }
   #host .host__name p {
     font-size: 20px;
-  }
-  #host .link-wrapper {
-    text-align: center;
   }
   #host .ylw-btn.desktop {
     display: none;
