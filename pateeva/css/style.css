@@ -183,8 +183,8 @@ a:focus {
   background-position-y: -35px;
   -webkit-transform: translateY(2px);
           transform: translateY(2px);
-  -webkit-box-shadow: 0 5px 0 0px #e3a700, 0 10px 10px 0 #6e6e6e;
-          box-shadow: 0 5px 0 0px #e3a700, 0 10px 10px 0 #6e6e6e;
+  -webkit-box-shadow: 0 5px 0 0px #e3a700, 0 7px 7px 0 #4d4d4d;
+          box-shadow: 0 5px 0 0px #e3a700, 0 7px 7px 0 #4d4d4d;
 }
 
 @media screen and (max-width: 1160px) {
@@ -933,6 +933,112 @@ a:focus {
     display: -ms-inline-flexbox;
     display: inline-flex;
     font-size: 18px;
+  }
+}
+
+#show h2 {
+  margin-bottom: 50px;
+}
+
+#show .slider {
+  background-color: #f3f3f3;
+  max-width: 1030px;
+  margin: 0 auto;
+  padding: 30px 15px 0;
+}
+
+#show .slider__arrows {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  padding: 0 15px;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: absolute;
+  top: 50%;
+  left: 0;
+}
+
+#show .slider__arrows .prev,
+#show .slider__arrows .next {
+  width: 36px;
+  height: 36px;
+  background-image: url("../img/show_arrow.svg");
+  cursor: pointer;
+}
+
+#show .slider__arrows .next {
+  -webkit-transform: rotateZ(180deg);
+          transform: rotateZ(180deg);
+}
+
+#show .slide__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 15px;
+}
+
+#show .slide__content img {
+  max-width: 470px;
+  width: 100%;
+}
+
+#show .slide__content p {
+  background-color: #fff;
+  max-width: 320px;
+  width: 100%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+}
+
+#show .slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 200px;
+  padding: 0;
+  margin: 50px auto;
+}
+
+#show .slick-dots li {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #000;
+}
+
+#show .slick-dots li.slick-active {
+  background-color: #5e2c69;
+}
+
+#show .slick-dots li::marker {
+  content: "";
+}
+
+#show .slick-dots li button {
+  display: none;
+}
+
+@media screen and (max-width: 1160px) {
+  #show .slider {
+    max-width: 500px;
   }
 }
 /*# sourceMappingURL=style.css.map */

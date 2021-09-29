@@ -149,7 +149,7 @@ a:focus {
     &:focus {
         background-position-y: -35px;
         transform: translateY(2px);
-        box-shadow: 0 5px 0 0px #e3a700, 0 10px 10px 0 rgb(110, 110, 110);
+        box-shadow: 0 5px 0 0px #e3a700, 0 7px 7px 0 rgb(77, 77, 77);
     }
     @media screen and (max-width: $screen-md) {
         height: 50px;
@@ -472,8 +472,7 @@ a:focus {
 #program {
     background-color: #f2e4f5;
     .container {
-        
-    padding-bottom: 75px;
+        padding-bottom: 75px;
     }
     h2 {
         margin-bottom: 70px;
@@ -662,7 +661,7 @@ a:focus {
                 font-size: 20px;
                 line-height: 120%;
             }
-            
+
             &::before {
                 position: absolute;
                 display: block;
@@ -769,6 +768,83 @@ a:focus {
             display: inline-flex;
             font-size: 18px;
         }
-
+    }
+}
+#show {
+    h2 {
+        margin-bottom: 50px;
+    }
+    .slider {
+        background-color: #f3f3f3;
+        max-width: 1030px;
+        margin: 0 auto;
+        padding: 30px 15px 0;
+        &__arrows {
+            display: flex;
+            padding: 0 15px;
+            justify-content: space-between;
+            width: 100%;
+            align-items: center;
+            position: absolute;
+            top: 50%;
+            left: 0;
+            .prev,
+            .next {
+                width: 36px;
+                height: 36px;
+                background-image: url("../img/show_arrow.svg");
+                cursor: pointer;
+            }
+            .next {
+                transform: rotateZ(180deg);
+            }
+        }
+    }
+    .slide {
+        &__content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0 15px;
+            img {
+                max-width: 470px;
+                width: 100%;
+            }
+            p {
+                background-color: #fff;
+                max-width: 320px;
+                width: 100%;
+                height: 40px;
+                line-height: 40px;
+                text-align: center;
+            }
+        }
+    }
+    .slick-dots {
+        display: flex;
+        justify-content: space-between;
+        width: 200px;
+        padding: 0;
+        margin: 50px auto;
+        li {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background-color: #000;
+            &.slick-active {
+                background-color: $clr-purple;
+            }
+            &::marker {
+                content: "";
+            }
+            button {
+                display: none;
+            }
+        }
+    }
+    @media screen and (max-width: $screen-md) {
+        .slider {
+            max-width: 500px;
+        }
     }
 }
