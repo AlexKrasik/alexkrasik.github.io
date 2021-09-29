@@ -234,61 +234,61 @@
             <div class="slider">
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide1.jpg" alt="" />
+                  <img data-src="./img/show_slide1.jpg" alt="" />
                   <p>Текстурный низкий пучок</p>
                 </div>
               </div>
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide2.jpg" alt="" />
+                  <img data-src="./img/show_slide2.jpg" alt="" />
                   <p>Локоны с эффектом косы</p>
                 </div>
               </div>
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide3.jpg" alt="" />
+                  <img data-src="./img/show_slide3.jpg" alt="" />
                   <p>Пучок на жгутах без накрутки</p>
                 </div>
               </div>
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide4.jpg" alt="" />
+                  <img data-src="./img/show_slide4.jpg" alt="" />
                   <p>Текстурный средний пучок</p>
                 </div>
               </div>
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide5.jpg" alt="" />
+                  <img data-src="./img/show_slide5.jpg" alt="" />
                   <p>Высокий пучок</p>
                 </div>
               </div>
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide6.jpg" alt="" />
+                  <img data-src="./img/show_slide6.jpg" alt="" />
                   <p>Греческая коса</p>
                 </div>
               </div>
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide7.jpg" alt="" />
+                  <img data-src="./img/show_slide7.jpg" alt="" />
                   <p>Текстурный хвост</p>
                 </div>
               </div>
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide8.jpg" alt="" />
+                  <img data-src="./img/show_slide8.jpg" alt="" />
                   <p>Низкий пучок на основе плетений</p>
                 </div>
               </div>
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide9.jpg" alt="" />
+                  <img data-src="./img/show_slide9.jpg" alt="" />
                   <p>Низкий пучок</p>
                 </div>
               </div>
               <div class="slide">
                 <div class="slide__content">
-                  <img src="./img/show_slide10.jpg" alt="" />
+                  <img data-src="./img/show_slide10.jpg" alt="" />
                   <p>Пучок “Роза”</p>
                 </div>
               </div>
@@ -297,45 +297,20 @@
           </div>
         </div>
         <div class="link-wrapper">
-          <a href="#" class="ylw-btn mobile">Я участвую в мастер-классе
-
-          </a>
+          <a href="#" class="ylw-btn mobile">Я участвую в мастер-классе </a>
         </div>
       </div>
     </section>
     <script
+      defer
       type="text/javascript"
       src="../assets/js/jquery-3.6.0.min.js"
     ></script>
-    <script type="text/javascript" src="../assets/slick/slick.min.js"></script>
-    <script>
-      $(function () {
-        $("#show .slider").slick({
-          infinite: true,
-          slidesToShow: 2,
-          slidesToScroll: 2,
-          dots: true,
-          appendDots: '#show .slider__dots',
-          prevArrow: '#show .prev',
-          nextArrow: '#show .next',
-          responsive: [
-          {
-              breakpoint: 1160,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-              },
-            },{
-              breakpoint: 767,
-              settings: {
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                arrows: false,
-              },
-            },
-          ],
-        });
-      });
-    </script>
+    <script
+      defer
+      type="text/javascript"
+      src="../assets/slick/slick.min.js"
+    ></script>
+    <script defer type="text/javascript" src="./script.js"></script>
   </body>
 </html>
