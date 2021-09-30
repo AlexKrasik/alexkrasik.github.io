@@ -2,7 +2,6 @@ $(function () {
     $("#show .slider img").toArray().forEach(element => {
       $(element).attr('src', $(element).attr('data-src'));
     });
-
     $("#show .slider").slick({
       infinite: true,
       slidesToShow: 2,
@@ -27,5 +26,18 @@ $(function () {
           },
         },
       ],
+    });
+    $("#review .slider").slick({
+      arrows: false,
+      dots: true,
+      appendDots: '#review .slider__dots',
+      responsive: [
+        {
+            breakpoint: 767,
+            settings: {
+              adaptiveHeight: true,
+            },
+          },
+        ],
     });
   });

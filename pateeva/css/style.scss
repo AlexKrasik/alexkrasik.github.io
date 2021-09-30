@@ -119,6 +119,29 @@ h2 {
         right: 0;
     }
 }
+.slick-dots {
+    display: flex;
+    justify-content: space-between;
+    width: 200px;
+    padding: 0;
+    margin: 50px auto;
+    li {
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background-color: #000;
+        cursor: pointer;
+        &.slick-active {
+            background-color: $clr-purple;
+        }
+        &::marker {
+            content: "";
+        }
+        button {
+            display: none;
+        }
+    }
+}
 a,
 a:hover,
 a:active,
@@ -788,6 +811,7 @@ a:focus {
             position: absolute;
             top: 50%;
             left: 0;
+            transform: translateY(-50%);
             .prev,
             .next {
                 width: 36px;
@@ -820,31 +844,117 @@ a:focus {
             }
         }
     }
-    .slick-dots {
-        display: flex;
-        justify-content: space-between;
-        width: 200px;
-        padding: 0;
-        margin: 50px auto;
-        li {
-            width: 7px;
-            height: 7px;
-            border-radius: 50%;
-            background-color: #000;
-            &.slick-active {
-                background-color: $clr-purple;
-            }
-            &::marker {
-                content: "";
-            }
-            button {
-                display: none;
-            }
-        }
-    }
     @media screen and (max-width: $screen-md) {
         .slider {
             max-width: 500px;
+        }
+    }
+}
+#review {
+    background-color: #f2e4f5;
+    h2 {
+        margin-bottom: 50px;
+    }
+    .slider {
+        &__wrap {
+            max-width: 1030px;
+            padding: 0 15px;
+        }
+    }
+    .slide {
+        &__content {
+            display: flex;
+            justify-content: space-between;
+        }
+        &__text {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 65px 60px 65px 15px;
+            font-size: 20px;
+            font-weight: 600;
+            line-height: 1.5;
+            &-lnk {
+                background-image: url("../img/insta_icon.svg");
+                background-repeat: no-repeat;
+                background-position: left center;
+                padding-left: 50px;
+            }
+        }
+        &__pic {
+            flex: 0 0 auto;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 350px;
+            height: 350px;
+            background-image: url("../img/ornament_white.svg");
+            background-size: contain;
+            background-position: center;
+            background-repeat: no-repeat;
+            img {
+                border-radius: 50%;
+            }
+        }
+    }
+    .slick-dots {
+        margin: 0 auto 50px;
+    }
+    @media screen and (max-width: $screen-md) {
+        .slide {
+            &__content {
+                align-items: center;
+                height: 250px;
+            }
+            &__text {
+                height: 100%;
+                font-size: 18px;
+                font-weight: 400;
+                line-height: 1.35;
+                padding: 30px 15px;
+            }
+            &__pic {
+                width: 175px;
+                height: 175px;
+                img {
+                    width: 125px;
+                    height: 125px;
+                }
+            }
+        }
+    }
+    @media screen and (max-width: $screen-sm) {
+        .slider {
+            &__wrap {
+                padding: 0;
+            }
+        }
+        .slide {
+            &__content {
+                flex-direction: column;
+                height: auto;
+            }
+            &__text {
+                order: 2;
+                padding: 15px 0;
+                &-txt {
+                    margin-bottom: 15px;
+                }
+                &-lnk {
+                    background-size: 32px;
+                    background-position: left top;
+                    padding: 3px 0 3px 38px;
+                }
+            }
+            &__pic {
+                order: 1;
+                width: 190px;
+                height: 190px;
+                img {
+                    width: 135px;
+                    height: 135px;
+                }
+            }
         }
     }
 }

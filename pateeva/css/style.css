@@ -139,6 +139,38 @@ h2 {
   }
 }
 
+.slick-dots {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 200px;
+  padding: 0;
+  margin: 50px auto;
+}
+
+.slick-dots li {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background-color: #000;
+  cursor: pointer;
+}
+
+.slick-dots li.slick-active {
+  background-color: #5e2c69;
+}
+
+.slick-dots li::marker {
+  content: "";
+}
+
+.slick-dots li button {
+  display: none;
+}
+
 a,
 a:hover,
 a:active,
@@ -962,6 +994,8 @@ a:focus {
   position: absolute;
   top: 50%;
   left: 0;
+  -webkit-transform: translateY(-50%);
+          transform: translateY(-50%);
 }
 
 #show .slider__arrows .prev,
@@ -1005,40 +1039,146 @@ a:focus {
   text-align: center;
 }
 
-#show .slick-dots {
+@media screen and (max-width: 1160px) {
+  #show .slider {
+    max-width: 500px;
+  }
+}
+
+#review {
+  background-color: #f2e4f5;
+}
+
+#review h2 {
+  margin-bottom: 50px;
+}
+
+#review .slider__wrap {
+  max-width: 1030px;
+  padding: 0 15px;
+}
+
+#review .slide__content {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-  width: 200px;
-  padding: 0;
-  margin: 50px auto;
 }
 
-#show .slick-dots li {
-  width: 7px;
-  height: 7px;
+#review .slide__text {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 65px 60px 65px 15px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.5;
+}
+
+#review .slide__text-lnk {
+  background-image: url("../img/insta_icon.svg");
+  background-repeat: no-repeat;
+  background-position: left center;
+  padding-left: 50px;
+}
+
+#review .slide__pic {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 auto;
+          flex: 0 0 auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 350px;
+  height: 350px;
+  background-image: url("../img/ornament_white.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+#review .slide__pic img {
   border-radius: 50%;
-  background-color: #000;
 }
 
-#show .slick-dots li.slick-active {
-  background-color: #5e2c69;
-}
-
-#show .slick-dots li::marker {
-  content: "";
-}
-
-#show .slick-dots li button {
-  display: none;
+#review .slick-dots {
+  margin: 0 auto 50px;
 }
 
 @media screen and (max-width: 1160px) {
-  #show .slider {
-    max-width: 500px;
+  #review .slide__content {
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: 250px;
+  }
+  #review .slide__text {
+    height: 100%;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 1.35;
+    padding: 30px 15px;
+  }
+  #review .slide__pic {
+    width: 175px;
+    height: 175px;
+  }
+  #review .slide__pic img {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  #review .slider__wrap {
+    padding: 0;
+  }
+  #review .slide__content {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    height: auto;
+  }
+  #review .slide__text {
+    -webkit-box-ordinal-group: 3;
+        -ms-flex-order: 2;
+            order: 2;
+    padding: 15px 0;
+  }
+  #review .slide__text-txt {
+    margin-bottom: 15px;
+  }
+  #review .slide__text-lnk {
+    background-size: 32px;
+    background-position: left top;
+    padding: 3px 0 3px 38px;
+  }
+  #review .slide__pic {
+    -webkit-box-ordinal-group: 2;
+        -ms-flex-order: 1;
+            order: 1;
+    width: 190px;
+    height: 190px;
+  }
+  #review .slide__pic img {
+    width: 135px;
+    height: 135px;
   }
 }
 /*# sourceMappingURL=style.css.map */
