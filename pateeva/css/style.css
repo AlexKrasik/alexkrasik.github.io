@@ -95,6 +95,7 @@ h2 {
   position: absolute;
   top: 0;
   right: -100px;
+  width: 10px;
   height: 100%;
   border-right: 1px solid #d7d7d7;
   padding: 100px 3px 20px 0px;
@@ -149,6 +150,7 @@ h2 {
   width: 200px;
   padding: 0;
   margin: 50px auto;
+  list-style: none;
 }
 
 .slick-dots li {
@@ -161,10 +163,6 @@ h2 {
 
 .slick-dots li.slick-active {
   background-color: #5e2c69;
-}
-
-.slick-dots li::marker {
-  content: "";
 }
 
 .slick-dots li button {
@@ -231,6 +229,9 @@ a:focus {
   background-color: #ecddfa;
   background-image: url("../img/main__bg.png"), -webkit-gradient(linear, left top, left bottom, from(#ecddfa), color-stop(29%, #f2ecff), color-stop(84%, #e9e0fb), to(#e9dffa));
   background-image: url("../img/main__bg.png"), linear-gradient(#ecddfa, #f2ecff 29%, #e9e0fb 84%, #e9dffa);
+  background-image: image-set(url("../img/main__bg.png") 1x, url("../img/main__bg.webp") 1x), -webkit-gradient(linear, left top, left bottom, from(#ecddfa), color-stop(29%, #f2ecff), color-stop(84%, #e9e0fb), to(#e9dffa));
+  background-image: -webkit-image-set(url("../img/main__bg.png") 1x, url("../img/main__bg.webp") 1x), linear-gradient(#ecddfa, #f2ecff 29%, #e9e0fb 84%, #e9dffa);
+  background-image: image-set(url("../img/main__bg.png") 1x, url("../img/main__bg.webp") 1x), linear-gradient(#ecddfa, #f2ecff 29%, #e9e0fb 84%, #e9dffa);
   background-repeat: no-repeat, repeat;
   background-position: calc(50% + 350px) bottom;
   border-radius: 0 0 50% 50% / 0 0 40px 40px;
@@ -311,6 +312,9 @@ a:focus {
     background-color: white;
     background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 221, 250, 0.27)), color-stop(29%, rgba(242, 236, 255, 0.27)), color-stop(84%, rgba(233, 224, 251, 0.27)), to(rgba(233, 223, 250, 0.27))), url("../img/main__bg_mobile.jpg");
     background-image: linear-gradient(rgba(236, 221, 250, 0.27), rgba(242, 236, 255, 0.27) 29%, rgba(233, 224, 251, 0.27) 84%, rgba(233, 223, 250, 0.27)), url("../img/main__bg_mobile.jpg");
+    background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(236, 221, 250, 0.27)), color-stop(29%, rgba(242, 236, 255, 0.27)), color-stop(84%, rgba(233, 224, 251, 0.27)), to(rgba(233, 223, 250, 0.27))), image-set(url("../img/main__bg_mobile.jpg") 1x, url("../img/main__bg_mobile.webp") 1x);
+    background-image: linear-gradient(rgba(236, 221, 250, 0.27), rgba(242, 236, 255, 0.27) 29%, rgba(233, 224, 251, 0.27) 84%, rgba(233, 223, 250, 0.27)), -webkit-image-set(url("../img/main__bg_mobile.jpg") 1x, url("../img/main__bg_mobile.webp") 1x);
+    background-image: linear-gradient(rgba(236, 221, 250, 0.27), rgba(242, 236, 255, 0.27) 29%, rgba(233, 224, 251, 0.27) 84%, rgba(233, 223, 250, 0.27)), image-set(url("../img/main__bg_mobile.jpg") 1x, url("../img/main__bg_mobile.webp") 1x);
     background-repeat: repeat, no-repeat;
     background-position: center bottom;
   }

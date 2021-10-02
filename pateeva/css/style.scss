@@ -1,4 +1,4 @@
-// @import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap");
+// @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&display=swap');
 @import url("https://fonts.googleapis.com/css2?family=Merriweather:wght@700;900&display=swap");
 @font-face {
     font-family: "Akrobat";
@@ -182,6 +182,8 @@ a:focus {
 #main {
     background-color: #ecddfa;
     background-image: url("../img/main__bg.png"), linear-gradient(#ecddfa, #f2ecff 29%, #e9e0fb 84%, #e9dffa);
+    background-image: image-set(url("../img/main__bg.png") 1x, url("../img/main__bg.webp") 1x),
+        linear-gradient(#ecddfa, #f2ecff 29%, #e9e0fb 84%, #e9dffa);
     background-repeat: no-repeat, repeat;
     background-position: calc(50% + 350px) bottom;
     border-radius: 0 0 50% 50% / 0 0 40px 40px;
@@ -222,7 +224,7 @@ a:focus {
             }
         }
         &__header {
-            // font-family: "Playfair Display";
+            // font-family: 'Playfair Display';
             font-family: "Merriweather", serif;
 
             font-size: 110px;
@@ -233,7 +235,7 @@ a:focus {
             letter-spacing: 5px;
         }
         &__subheader {
-            // font-family: "Playfair Display";
+            // font-family: 'Playfair Display';
             font-family: "Merriweather", serif;
             font-size: 36px;
             font-weight: 700;
@@ -257,6 +259,13 @@ a:focus {
                 rgba(233, 223, 250, 0.27)
             ),
             url("../img/main__bg_mobile.jpg");
+        background-image: linear-gradient(
+                rgba(236, 221, 250, 0.27),
+                rgba(242, 236, 255, 0.27) 29%,
+                rgba(233, 224, 251, 0.27) 84%,
+                rgba(233, 223, 250, 0.27)
+            ),
+            image-set(url("../img/main__bg_mobile.jpg") 1x, url("../img/main__bg_mobile.webp") 1x);
         background-repeat: repeat, no-repeat;
         background-position: center bottom;
         .container {
