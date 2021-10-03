@@ -184,6 +184,8 @@ body {
     min-height: 540px;
     background-color: $grey;
     background-image: url("../img/header_logo.svg"), url("../img/header_camera.jpg");
+    background-image: url("../img/header_logo.svg"),
+        image-set(url("../img/header_camera.jpg") 1x, url("../img/header_camera.webp") 1x);
     background-repeat: no-repeat;
     background-position: 100px 150px, right top;
     padding-top: 28px;
@@ -268,6 +270,10 @@ body {
         width: 60%;
         background-color: black;
         background-image: url("../img/get_pioner.jpg");
+        background-image: image-set(
+            url("../img/get_pioner.jpg") 1x, 
+            url("../img/get_pioner.webp") 1x, 
+        );
         background-position: 650% bottom;
         background-repeat: no-repeat;
         &.bg_slideIn {
@@ -296,6 +302,10 @@ body {
         align-items: center;
         width: 40%;
         background-image: url("../img/get_bulat.jpg");
+        background-image: image-set(
+            url("../img/get_bulat.jpg") 1x, 
+            url("../img/get_bulat.webp") 1x, 
+        );
         background-position: center 30%;
         background-size: cover;
         background-color: $green;
@@ -607,7 +617,12 @@ body {
     &__bulat {
         width: 50%;
         background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7)),
-            url(../img/easy_bulat.jpg);
+            url("../img/easy_bulat.jpg");
+            background-image: linear-gradient(rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7)),
+            image-set(
+                url("../img/easy_bulat.jpg") 1x,
+                url("../img/easy_bulat.webp") 1x,
+            );
         background-size: cover;
         background-position: center;
 
@@ -856,6 +871,10 @@ body {
 .scheldue {
     background-color: $beige;
     background-image: url("../img/scheldue_bg.jpg");
+    background-image: image-set(
+        url("../img/scheldue_bg.jpg") 1x,
+        url("../img/scheldue_bg.webp") 1x,
+    );
     background-repeat: no-repeat;
     background-position-x: calc(50% - 550px);
     padding: 40px 0 50px;
@@ -1010,6 +1029,10 @@ body {
     padding-bottom: 200px;
     color: $white;
     background-image: url("../img/horn.png");
+    background-image: image-set(
+        url("../img/horn.png") 1x,
+        url("../img/horn.webp") 1x,
+    );
     background-size: 470px;
     background-repeat: no-repeat;
     background-position: 100px bottom;
