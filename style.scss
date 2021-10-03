@@ -1,0 +1,194 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;700&display=swap");
+* {
+    box-sizing: border-box;
+}
+html,
+body {
+    height: 100%;
+    margin: 0;
+    scroll-behavior: smooth;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    @media screen and (max-width: 767px) {
+        font-size: 14px;
+    }
+}
+h1,h2,p{
+    margin: 0;
+}
+ul {
+    margin: 1em 0;
+    padding-left: 1em;
+}
+li {
+    margin-bottom: 5px;
+}
+a {
+    color: black;
+    text-decoration: none;
+    &:hover, 
+    &:active {
+        text-decoration: underline;
+    }
+}
+h1,
+h2 {
+    position: absolute;
+    top: 0;
+    font-size: 36px;
+    padding: 15px;
+    @media (max-width: 767px) {
+        font-size: 18px;
+    }
+}
+h1 {
+    left: 0;
+    font-weight: 700;
+}
+h2 {
+    right: 0;
+    font-weight: 300;
+}
+.content {
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+}
+.slider {
+    flex: 1 1 auto;
+}
+.slide {
+    position: relative;
+    height: 100%;
+}
+.logo-wrapper {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+}
+.logo {
+    display: inline-flex;
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background-color: black;
+    &::before {
+        content: "aK";
+        color: white;
+        font-size: 36px;
+        font-weight: 300;
+        letter-spacing: -3px;
+        margin-right: 3px;
+        animation: type 1.3s linear 2s 1 forwards;
+    }
+    @media (max-width: 767px) {
+        &::before {
+            font-size: 18px;
+            letter-spacing: -1px;
+            margin-right: 1px;
+        }
+    }
+}
+@keyframes type {
+    0% {
+        content: "aK";
+    }
+    30% {
+        content: "aK";
+    }
+    35% {
+        content: "alK";
+    }
+    40% {
+        content: "aleK";
+    }
+    50% {
+        content: "alexK";
+    }
+    60% {
+        content: "alexKr";
+    }
+    65% {
+        content: "alexKra";
+    }
+    70% {
+        content: "alexKras";
+    }
+    75% {
+        content: "alexKrasi";
+    }
+    80% {
+        content: "alexKrasik";
+    }
+    100% {
+        content: "alexKrasik";
+    }
+}
+.menu {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 100;
+    font-size: 18px;
+    font-weight: 500;
+    padding-bottom: 10px;
+    &__item {
+        position: relative;
+        margin: 0 5px;
+        color: black;
+        text-transform: uppercase;
+        text-decoration: none;
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 10px;
+            border-radius: 50%;
+            background-color: black;
+            top: -15px;
+            left: calc(50%);
+            opacity: 0;
+            transition: .5s;
+        }
+        &.active::before {
+            opacity: 1;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        font-size: 14px;
+    }
+}
+.container {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 5em 1em 1em;
+}
+.bold {
+    font-weight: 500;
+    text-transform: uppercase;
+}
+.social {
+    padding-left: 36px;
+    height: 32px;
+    line-height: 32px;
+    margin-top: 5px;
+    text-decoration: underline;
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: contain;
+    &.tg {
+        background-image: url('/assets/soc_tg.svg');
+    }
+    &.ph {
+        background-image: url('/assets/soc_ph.svg');
+    }
+    &.em {
+        background-image: url('/assets/soc_em.svg');
+    }
+}

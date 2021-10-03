@@ -41,9 +41,6 @@ function remaining(from, to) {
     let m_num = Math.floor(diff / 60);
     diff = diff % 60;
     let s_num = Math.floor(diff);
-
-
-
     return {
         days: d_num,
         hours: h_num,

@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>alexKrasik | Frontend developer</title>
+    <link rel="shortcut icon" type="image/x-icon" href="/assets/favicon.ico" />
+    <link rel="stylesheet" href="/assets/css/normalize.css" />
+    <link rel="stylesheet" href="/style.css" />
+  </head>
+  <body>
+    <div class="logo-wrapper">
+      <div class="logo wow slideInDown"></div>
+    </div>
+    <div class="content">
+      <div class="slider">
+        <div class="slide" id="info">
+          <div class="container">
+            <h1>CV</h1>
+            <h2>info</h2>
+            <p class="bold">ИМЯ:</p>
+            <p>Красиков&nbsp;Александр&nbsp;Александрович</p>
+            <br />
+            <p class="bold">ВОЗРАСТ:</p>
+            <p><span id="age"></span> (01.06.92)</p>
+            <br />
+            <p class="bold">ОБРАЗОВАНИЕ:</p>
+            <p>
+              НАУ им.Н.Е.Жуковского “ХАИ” 2013 <br />
+              Разработка и тестирование ПО
+            </p>
+            <br />
+            <p class="bold">ГРАЖДАНСТВО:</p>
+            <p>Украина</p>
+            <br />
+            <p class="bold">ОПЫТ РАБОТЫ:</p>
+            <p>2 года (freelance HTML-coder)</p>
+            <br />
+          </div>
+        </div>
+        <div class="slide" id="skills">
+          <div class="container">
+            <h2>skills</h2>
+            <p class="bold">HTML:</p>
+            <ul>
+              <li>кроссбраузерно (до ie11) и адаптивно.</li>
+              <li>опыт верстки с Figma и Photoshop макетов</li>
+            </ul>
+            <p class="bold">CSS:</p>
+            <ul>
+              <li>flexbox, @media</li>
+              <li>использую препроцессор SASS (точнее SCSS)</li>
+              <li>анимации @keyframes, animate.css,</li>
+              <li>bootstrap не использую, но могу если понадобится</li>
+            </ul>
+            <p class="bold">JS:</p>
+            <ul>
+              <li>jquery (могу и в vanilaJS)</li>
+              <li>slick для слайдеров</li>
+              <li>wow.js для анимаций</li>
+            </ul>
+            <p class="bold">Оптимизация:</p>
+            <ul>
+              <li>таргет - зеленый PageSpeed Insights</li>
+              <li>WEBP если это умеет браузер</li>
+              <li>всё что можно конвертирую в SVG</li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide" id="portfolio">
+          <div class="container">
+            <h2>portfolio</h2>
+            <p class="bold">Примеры работ:</p>
+            <ul>
+              <li>
+                <a href="/pateeva/">Лендинг "Патеева | Высокий пучок"</a>
+              </li>
+              <li>
+                <a href="/photo_camp/">Лендинг "Алеев | ФотоЛагерь"</a>
+              </li>
+              <li>
+                <a href="/freesys/">Лендинг "Алеев | Система уроков"</a>
+              </li>
+              <li>
+                <a href="/principles/">Лендинг "Алеев | 5 Принципов"</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="slide" id="contact">
+          <div class="container">
+            <h2>contact</h2>
+            <p class="bold">каналы связи:</p>
+            <p class="social em">
+              <a href="mailto:alexkrasik@gmail.com">alexkrasik[at]gmail.com</a>
+            </p>
+            <p class="social tg">
+              <a href="tg://resolve?domain=alexkrasik">@alexkrasik</a>
+            </p>
+            <p class="social ph">
+              <a href="tel:+380660803486">+38O66O8O3486</a>
+            </p>
+          </div>
+        </div>
+      </div>
+      <nav class="menu">
+        <a class="menu__item active" data-slide="0" href="#">Инфо</a>
+        <a class="menu__item" data-slide="1" href="#">Умею</a>
+        <a class="menu__item" data-slide="2" href="#">Работы</a>
+        <a class="menu__item" data-slide="3" href="#">Контакты</a>
+      </nav>
+    </div>
+
+    <link rel="stylesheet" type="text/css" href="/assets/slick/slick.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/slick/slick-theme.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/animate.min.css" />
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script src="/assets/slick/slick.min.js"></script>
+    <script src="/assets/js/wow.min.js"></script>
+    <script src="/script.js"></script>
+  </body>
+</html>
