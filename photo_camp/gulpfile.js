@@ -3,6 +3,6 @@ const webp = require('gulp-webp');
  
 gulp.task('default', () =>
     gulp.src('img/*.{jpg,png}')
-        .pipe(webp({quality: 100}))
+        .pipe(webp({quality: 90}))
         .pipe(gulp.dest('img'))
 );
