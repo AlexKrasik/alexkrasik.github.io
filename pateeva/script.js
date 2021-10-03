@@ -3,7 +3,7 @@ $(function () {
   //lazy load
   $("#show .slider img")
     .toArray()
-    .forEach((element) => {
+    .forEach(function (element) {
       $(element).attr("src", $(element).attr("data-src"));
     });
     //sliders

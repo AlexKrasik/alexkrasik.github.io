@@ -801,7 +801,8 @@ a:focus {
   padding-bottom: 50px;
 }
 
-#host .host__name p {
+#host .host__name span {
+  display: block;
   font-size: 36px;
   font-weight: 400;
   color: black;
@@ -1082,6 +1083,8 @@ a:focus {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
+  max-width: 700px;
   padding: 65px 60px 65px 15px;
   font-size: 20px;
   font-weight: 600;
@@ -1089,9 +1092,11 @@ a:focus {
 }
 
 #review .slide__text-lnk {
+  display: block;
   background-image: url("../img/insta_icon.svg");
   background-repeat: no-repeat;
   background-position: left center;
+  background-size: 36px 36px;
   padding-left: 50px;
 }
 
