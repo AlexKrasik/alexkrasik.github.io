@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>AXIS - тестовое</title>
+  </head>
+  <body>
+    <div class="container">
+      <h1>Калькулятор стоимости</h1>
+      <p>
+        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nemo non quo repellat aut omnis iusto explicabo
+        dolores laborum autem? Fugiat, sapiente maiores. Accusamus eius voluptate nisi voluptas adipisci laboriosam
+        expedita.
+      </p>
+      <form class="template">
+        <div class="sub_header">Выберите макет:</div>
+        <div class="template-gallery">
+          <div class="item">
+            <label for="template1">
+              <input type="radio" name="template" id="template1" />
+              <span class="item-pic">
+                <img src="img/template1.jpg" alt="ALMA" />
+                <span class="item-zoom" data-preview-src="img/template1.jpg"></span>
+              </span>
+              <span class="item-name">ALMA</span>
+            </label>
+          </div>
+          <div class="item">
+            <label for="template2">
+              <input type="radio" name="template" id="template2" />
+              <span class="item-pic">
+                <img src="img/template2.jpg" alt="Dizil" />
+                <span class="item-zoom" data-preview-src="img/template2.jpg"></span>
+              </span>
+              <span class="item-name">Dizil</span>
+            </label>
+          </div>
+          <div class="item">
+            <label for="template3">
+              <input type="radio" name="template" id="template3" />
+              <span class="item-pic">
+                <img src="img/template3.jpg" alt="Digo" />
+                <span class="item-zoom" data-preview-src="img/template3.jpg"></span>
+              </span>
+              <span class="item-name">Digo</span>
+            </label>
+          </div>
+        </div>
+        <div class="sub_header">Свой макет:</div>
+        <div class="template-custom">
+          <div class="item">
+            <label for="template_c">
+              <input type="radio" name="template" id="template_c" />
+              <span class="item-pic">
+                <img id="user_template" src="img/custom.jpg" alt="CUSTOM" />
+              </span>
+              <span class="item-name">Ваш макет</span>
+            </label>
+          </div>
+          <label for="template_file">
+            <span class="file__input">
+              <span class="file__input-btn">ВЫБРАТЬ ФАЙЛ</span><span class="file__input-name">...</span>
+            </span>
+            <input type="file" accept=".png, .jpeg, .jpg" name="template_file" id="template_file" />
+          </label>
+        </div>
+        <div class="sub_header">Заказать дизайн:</div>
+        <div class="template-order">
+          <div class="item">
+            <label for="template_o">
+              <input type="radio" name="template" id="template_o" />
+              <span class="item-pic">
+                <img src="img/order.jpg" alt="order" />
+              </span>
+              <span class="item-name">Заказать</span>
+            </label>
+          </div>
+        </div>
+        <div class="sub_header">Количество страниц:</div>
+        <label for="template_pages">
+          <input type="number" name="template_pages" id="template_pages" min="1" value="3" />
+        </label>
+        <div class="calc">
+          <a class="calc__button" href="javascript:void(0)">Рассчитать</a>
+          <div class="calc__result">~ 0 $</div>
+        </div>
+      </form>
+    </div>
+    <div class="preview-bg">
+      <img class="preview-pic" src="" alt="preview" />
+    </div>
+    <div class="error">
+      <div class="error__text">...</div>
+    </div>
+    <input
+      type="hidden"
+      name="calc__coefficients"
+      data-base-page-cost="50"
+      data-main-page-cost="100"
+      data-basic-template-multiplier="1"
+      data-user-template-multiplier="2.5"
+      data-order-template-multiplier="2"
+      data-order-template-cost="300"
+    />
+    <script src="/assets/js/jquery-3.6.0.min.js"></script>
+    <script>
+      var errorInterval;
+      $(function () {
+        $(".preview-bg").click(function (e) {
+          $(".preview-bg").hide();
+        });
+        $(".item-zoom").click(function (e) {
+          e.preventDefault();
+          let picSrc = $(e.target).attr("data-preview-src");
+          $(".preview-pic").attr("src", picSrc);
+          $(".preview-bg").show();
+        });
+        //chosed file preview
+        $("#template_file").change(function (e) {
+          if (e.target.files[0]) {
+            //file name
+            $(".file__input-name").text(e.target.files[0].name);
+            //file preview
+            $(".file__input-name, .file__input-btn").css("border-color", "#e6342f");
+            var reader = new FileReader();
+            reader.onload = function (event) {
+              $("#user_template").attr("src", event.target.result);
+            };
+            reader.readAsDataURL(e.target.files[0]);
+            //select custom template option
+            $("#template_c").prop("checked", "true");
+          }
+        });
+        //validation && calc
+        $(".calc__button").click(function () {
+          $(".error").removeClass("show");
+          $(".calc__result").removeClass("finish");
+          let valid = true;
+          if ($("#template_c").prop("checked") && !$("#template_file").val()) {
+            showErrorMessage("Для опции свой макет требуется выбрать файл");
+            valid = false;
+          }
+          if (!$("input[name='template']").is(":checked")) {
+            showErrorMessage("Нужно выбрать макет или добавить свой");
+            valid = false;
+          }
+          if ($("input[name='template_pages']").val() < 1) {
+            showErrorMessage("Количество страниц не может быть меньше 1");
+            valid = false;
+          }
+          if (valid) {
+            let pageCount = $("input[name='template_pages']").val();
+            let basePageCost = Number($("input[name=calc__coefficients]").attr("data-base-page-cost"));
+            let mainPageCost = Number($("input[name=calc__coefficients]").attr("data-main-page-cost"));
+            let basicTemplateMultiplier = Number(
+              $("input[name=calc__coefficients]").attr("data-basic-template-multiplier")
+            );
+            let userTemplateMultiplier = Number(
+              $("input[name=calc__coefficients]").attr("data-user-template-multiplier")
+            );
+            let orderTemplateMultiplier = Number(
+              $("input[name=calc__coefficients]").attr("data-order-template-multiplier")
+            );
+            let orderTemplateCost = Number($("input[name=calc__coefficients]").attr("data-order-template-cost"));
+            let multiplier = $("#template_c").prop("checked")
+              ? userTemplateMultiplier
+              : $("#template_o").prop("checked")
+              ? orderTemplateMultiplier
+              : basicTemplateMultiplier;
+
+            let resultCost = mainPageCost * multiplier + basePageCost * multiplier * (pageCount - 1);
+            $(".calc__result").addClass("finish");
+            $(".calc__result").html(`~ ${resultCost} $`);
+          }
+        });
+      });
+      function showErrorMessage(errorText) {
+        clearInterval(errorInterval);
+        $(".error__text").text(errorText);
+        $(".error").addClass("show");
+        errorInterval = setInterval(function () {
+          $(".error").removeClass("show");
+        }, 5000);
+      }
+    </script>
+  </body>
+</html>
