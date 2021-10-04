@@ -67,15 +67,18 @@ h1 {
   margin: 2em 0 1em;
 }
 
-.template-gallery {
+.template-gallery,
+.template-custom,
+.template-order {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: space-evenly;
-      -ms-flex-pack: space-evenly;
-          justify-content: space-evenly;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  gap: 30px;
 }
 
 .template-custom {
@@ -184,6 +187,7 @@ input[type="number"]:active, input[type="number"]:focus, input[type="number"]:fo
   display: -ms-inline-flexbox;
   display: inline-flex;
   cursor: pointer;
+  margin-bottom: 30px;
 }
 
 .file__input-btn {

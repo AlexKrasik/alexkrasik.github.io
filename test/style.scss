@@ -60,10 +60,13 @@ h1 {
     text-transform: uppercase;
     margin: 2em 0 1em;
 }
-.template-gallery {
+.template-gallery,
+.template-custom,
+.template-order {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: center;
     flex-wrap: wrap;
+    gap: 30px;
 }
 .template-custom {
     display: flex;
@@ -147,6 +150,7 @@ input[type="number"] {
 .file__input {
     display: inline-flex;
     cursor: pointer;
+    margin-bottom: 30px;
     &-btn {
         border: 1px solid #3c4245;
         display: block;
