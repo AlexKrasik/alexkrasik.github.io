@@ -33,7 +33,7 @@ html,
 body {
     height: 100%;
     font-family: "Lato", sans-serif;
-    font-weight: 100;
+    font-weight: 300;
     color: #e4e4e4;
     font-size: 16px;
 }
@@ -170,13 +170,19 @@ input[type="number"] {
         width: max-content;
         margin: 2em auto;
         padding: 1em 2em;
-        border: 1px solid #3c4245;
-        color: #3c4245;
+        border: 1px solid #e4e4e4;
+        background: none;
+        color: #e4e4e4;
         font-size: 1.5em;
         text-transform: uppercase;
         text-decoration: none;
+        transition: .3s;
         &:hover {
             border-color: #e6342f;
+        }
+        &[disabled] {
+            color: #3c4245;
+            border: 1px solid #3c4245;
         }
     }
     &__result {

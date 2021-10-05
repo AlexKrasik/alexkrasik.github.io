@@ -15,7 +15,7 @@
         dolores laborum autem? Fugiat, sapiente maiores. Accusamus eius voluptate nisi voluptas adipisci laboriosam
         expedita.
       </p>
-      <form class="template">
+      <form class="template" onSubmit="calc(); return false;">
         <div class="sub_header">Выберите макет:</div>
         <div class="template-gallery">
           <div class="item">
@@ -81,10 +81,10 @@
         </div>
         <div class="sub_header">Количество страниц:</div>
         <label for="template_pages">
-          <input type="number" name="template_pages" id="template_pages" min="1" value="3" />
+          <input type="number" name="template_pages" oninput="validation();" id="template_pages" min="1" value="3" />
         </label>
         <div class="calc">
-          <a class="calc__button" href="javascript:void(0)">Рассчитать</a>
+          <input type="submit" class="calc__button" value="Рассчитать" disabled />
           <div class="calc__result">~ 0 $</div>
         </div>
       </form>
@@ -134,56 +134,60 @@
             $("#template_c").prop("checked", "true");
           }
         });
-        //validation && calc
-        $(".calc__button").click(function () {
-          $(".error").removeClass("show");
-          $(".calc__result").removeClass("finish");
-          let valid = true;
-          if ($("#template_c").prop("checked") && !$("#template_file").val()) {
-            showErrorMessage("Для опции свой макет требуется выбрать файл");
-            valid = false;
-          }
-          if (!$("input[name='template']").is(":checked")) {
-            showErrorMessage("Нужно выбрать макет или добавить свой");
-            valid = false;
-          }
-          if ($("input[name='template_pages']").val() < 1) {
-            showErrorMessage("Количество страниц не может быть меньше 1");
-            valid = false;
-          }
-          if (valid) {
-            let pageCount = $("input[name='template_pages']").val();
-            let basePageCost = Number($("input[name=calc__coefficients]").attr("data-base-page-cost"));
-            let mainPageCost = Number($("input[name=calc__coefficients]").attr("data-main-page-cost"));
-            let basicTemplateMultiplier = Number(
-              $("input[name=calc__coefficients]").attr("data-basic-template-multiplier")
-            );
-            let userTemplateMultiplier = Number(
-              $("input[name=calc__coefficients]").attr("data-user-template-multiplier")
-            );
-            let orderTemplateMultiplier = Number(
-              $("input[name=calc__coefficients]").attr("data-order-template-multiplier")
-            );
-            let orderTemplateCost = Number($("input[name=calc__coefficients]").attr("data-order-template-cost"));
-            let multiplier = $("#template_c").prop("checked")
-              ? userTemplateMultiplier
-              : $("#template_o").prop("checked")
-              ? orderTemplateMultiplier
-              : basicTemplateMultiplier;
-
-            let resultCost = mainPageCost * multiplier + basePageCost * multiplier * (pageCount - 1);
-            $(".calc__result").addClass("finish");
-            $(".calc__result").html(`~ ${resultCost} $`);
-          }
+        //validation on change
+        $("form.template input").change(function () {
+          validation();
         });
       });
+      function validation() {
+        //reset result
+        $(".calc__result").removeClass("finish");
+        $(".calc__result").html(`~ $0 $`);
+        //checks
+        let valid = true;
+        if ($("#template_c").prop("checked") && !$("#template_file").val()) {
+          showErrorMessage("Для опции свой макет требуется выбрать файл");
+          valid = false;
+        }
+        if (!$("input[name='template']").is(":checked")) {
+          showErrorMessage("Нужно выбрать макет или добавить свой");
+          valid = false;
+        }
+        if ($("input[name='template_pages']").val() < 1) {
+          showErrorMessage("Количество страниц не может быть меньше 1");
+          valid = false;
+        }
+        $(".calc__button").prop("disabled", !valid);
+      }
+      function calc() {
+        let pageCount = Number($("input[name='template_pages']").val());
+        let basePageCost = Number($("input[name=calc__coefficients]").attr("data-base-page-cost"));
+        let mainPageCost = Number($("input[name=calc__coefficients]").attr("data-main-page-cost"));
+        let basicTemplateMultiplier = Number(
+          $("input[name=calc__coefficients]").attr("data-basic-template-multiplier")
+        );
+        let userTemplateMultiplier = Number($("input[name=calc__coefficients]").attr("data-user-template-multiplier"));
+        let orderTemplateMultiplier = Number(
+          $("input[name=calc__coefficients]").attr("data-order-template-multiplier")
+        );
+        let orderTemplateCost = Number($("input[name=calc__coefficients]").attr("data-order-template-cost"));
+        let multiplier = $("#template_c").prop("checked")
+          ? userTemplateMultiplier
+          : $("#template_o").prop("checked")
+          ? orderTemplateMultiplier
+          : basicTemplateMultiplier;
+
+        let resultCost = mainPageCost * multiplier + basePageCost * multiplier * (pageCount - 1);
+        $(".calc__result").addClass("finish");
+        $(".calc__result").html(`~ ${resultCost} $`);
+      }
       function showErrorMessage(errorText) {
-        clearInterval(errorInterval);
-        $(".error__text").text(errorText);
-        $(".error").addClass("show");
-        errorInterval = setInterval(function () {
-          $(".error").removeClass("show");
-        }, 5000);
+        //   clearInterval(errorInterval);
+        //   $(".error__text").text(errorText);
+        //   $(".error").addClass("show");
+        //   errorInterval = setInterval(function () {
+        //     $(".error").removeClass("show");
+        //   }, 5000);
       }
     </script>
   </body>
