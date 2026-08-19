@@ -1,0 +1,28 @@
+{
+  "name": "alexkrasik.github.io",
+  "version": "1.0.0",
+  "dependencies": {
+    "@vueuse/core": "^12.3.0",
+    "vue": "^3.2.45",
+    "vue-i18n": "^10.0.5",
+    "vue-router": "^4.1.6"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0",
+    "@rushstack/eslint-patch": "^1.1.4",
+    "@vitejs/plugin-vue": "^4.0.0",
+    "@vue/eslint-config-prettier": "^7.0.0",
+    "eslint": "^8.22.0",
+    "eslint-plugin-vue": "^9.3.0",
+    "prettier": "^2.7.1",
+    "sass": "^1.57.1",
+    "vite": "^4.0.0"
+  },
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs --fix --ignore-path .gitignore"
+  }
+}

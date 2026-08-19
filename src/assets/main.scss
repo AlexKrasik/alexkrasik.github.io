@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+@import url('null.scss');
+
+:root {
+  --bg-color: #eee;
+
+  --text-color: #121212;
+  --text-color-tinted: #a4a4a4;
+
+  --ui-border-color: #a4a4a4;
+  --ui-bg-color: #f8f8f8;
+  --ui-element: #ebebeb;
+  --ui-clip-size: 5px;
+  --ui-clip: polygon(var(--ui-clip-size) 0, 100% 0, 100% calc(100% - var(--ui-clip-size)), calc(100% - var(--ui-clip-size)) 100%, 0 100%, 0 var(--ui-clip-size));
+}
+
+:root.dark-theme {
+  --bg-color: #121212;
+
+  --text-color: #fff;
+  --text-color-tinted: #808080;
+
+}
+
+body {
+  font-family: "JetBrains Mono", monospace;
+  scroll-behavior: smooth;
+  margin-right: calc(-1 * (100vw - 100%));
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 0 15px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 3em;
+  font-weight: 800;
+}
+
+h1::before {
+  content: "/";
+
+}

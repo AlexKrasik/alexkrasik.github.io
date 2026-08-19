@@ -1,0 +1,124 @@
+{
+  "services": {
+    "title": "",
+    "list": [
+      {
+        "title": "AquaMyrgorod",
+        "link": "https://aquamyrgorod.com.ua/",
+        "description": {
+          "en": "Website for a mineral water manufacturer",
+          "uk": "Сайт виробника мінеральної води"
+        },
+        "logo": "/img/portfolio/aqua.svg",
+        "pic": "/img/portfolio/aqua.jpg",
+        "pic_x2": "/img/portfolio/aqua@2x.jpg",
+        "pic_x3": "/img/portfolio/aqua@3x.jpg",
+        "pic_webp": "/img/portfolio/aqua.webp",
+        "pic_webp_x2": "/img/portfolio/aqua@2x.webp",
+        "pic_webp_x3": "/img/portfolio/aqua@3x.webp"
+      },
+      {
+        "title": "Kubix",
+        "link": "https://kubix.com.ua/",
+        "description": {
+          "en": "Board games publisher and online store",
+          "uk": "Інтернет-магазин та Видавець настільних ігор"
+        },
+        "logo": "/img/portfolio/kubix.svg",
+        "pic": "/img/portfolio/kubix.jpg",
+        "pic_x2": "/img/portfolio/kubix@2x.jpg",
+        "pic_x3": "/img/portfolio/kubix@3x.jpg",
+        "pic_webp": "/img/portfolio/kubix.webp",
+        "pic_webp_x2": "/img/portfolio/kubix@2x.webp",
+        "pic_webp_x3": "/img/portfolio/kubix@3x.webp"
+      },
+      {
+        "title": "Bakery Food Investment",
+        "link": "https://bfi.ua",
+        "description": {
+          "en": "Bakery manufacturer website",
+          "uk": "Сайт заводу хлібобулочних виробів"
+        },
+        "logo": "/img/portfolio/bfi.svg",
+        "pic": "/img/portfolio/bfi.jpg",
+        "pic_x2": "/img/portfolio/bfi@2x.jpg",
+        "pic_x3": "/img/portfolio/bfi@3x.jpg",
+        "pic_webp": "/img/portfolio/bfi.webp",
+        "pic_webp_x2": "/img/portfolio/bfi@2x.webp",
+        "pic_webp_x3": "/img/portfolio/bfi@3x.webp"
+      },
+      {
+        "title": "FishkiFood",
+        "link": "https://fishkifood.com.ua/",
+        "description": {
+          "en": "Deep-frozen bakery distributor",
+          "uk": "Дистриб'ютор випічки глибокої заморозки"
+        },
+        "logo": "/img/portfolio/ff.svg",
+        "pic": "/img/portfolio/ff.jpg",
+        "pic_x2": "/img/portfolio/ff@2x.jpg",
+        "pic_x3": "/img/portfolio/ff@3x.jpg",
+        "pic_webp": "/img/portfolio/ff.webp",
+        "pic_webp_x2": "/img/portfolio/ff@2x.webp",
+        "pic_webp_x3": "/img/portfolio/ff@3x.webp"
+      },
+      {
+        "title": "KyivPasServis",
+        "link": "https://kyivpasservis.com.ua/",
+        "description": {
+          "en": "Kyiv bus stations",
+          "uk": "Київські автостанції "
+        },
+        "logo": "/img/portfolio/kps.svg",
+        "pic": "/img/portfolio/kps.jpg",
+        "pic_x2": "/img/portfolio/kps@2x.jpg",
+        "pic_x3": "/img/portfolio/kps@3x.jpg",
+        "pic_webp": "/img/portfolio/kps.webp",
+        "pic_webp_x2": "/img/portfolio/kps@2x.webp",
+        "pic_webp_x3": "/img/portfolio/kps@3x.webp"
+      }
+    ]
+  },
+  "archive": {
+    "title": "_archive",
+    "list": [
+      {
+        "title": "Лендинг 5 принципов",
+        "link": "/archive/principles/index.html",
+        "site": "/principles/",
+        "description": {
+          "en": "Landing page \"5 принципов\" for Fotobiz Family",
+          "uk": "Лендинг \"5 принципов\" для Fotobiz Family"
+        }
+      },
+      {
+        "title": "Лендинг Бесплатная система уроков...",
+        "link": "/archive/freesys/index.html",
+        "site": "/freesys/",
+        "description": {
+          "en": "Landing page \"Система уроков\" for Fotobiz Family",
+          "uk": "Лендинг \"Система уроков\" для Fotobiz Family"
+        }
+      },
+      {
+        "title": "Лендинг Фотолагерь",
+        "link": "/archive/photo_camp/index.html",
+        "site": "/photo_camp/",
+        "description": {
+          "en": "Landing page \"Фотолагерь\" for Fotobiz Family",
+          "uk": "Лендинг \"Фотолагерь\" для Fotobiz Family"
+        }
+      },
+      {
+        "title": "Патеева: Высокий пучок",
+        "link": "/archive/pateeva/index.html",
+        "site": "/pateeva/",
+        "description": {
+          "en": "Landing page \"Высокий пучок\" for Pateeva",
+          "uk": "Лендинг \"Высокий пучок\" для Татьяны Патеевой"
+        }
+      }
+    ]
+  }
+}
+
