@@ -1,1 +1,0 @@
-import{_ as t,o,c,a as n}from"./index-5b9c60e8.js";const s={},a={class:"container"};function r(_,e){return o(),c("div",a,[...e[0]||(e[0]=[n("h1",null,"contacts",-1)])])}const l=t(s,[["render",r]]);export{l as default};
