@@ -25,7 +25,7 @@ function toggleLanguage(e) {
         </div>
 
         <nav class="header-nav">
-          <RouterLink to="/portfolio">portfolio</RouterLink>
+          <RouterLink to="/projects">projects</RouterLink>
           <RouterLink to="/cv">cv</RouterLink>
 <!--          <RouterLink to="/contacts">contacts</RouterLink>-->
         </nav>

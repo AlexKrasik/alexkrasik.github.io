@@ -2,20 +2,22 @@
 @import url('null.scss');
 
 :root {
-  --bg-color: #eee;
+  --bg-color: #eeeeee;
 
-  --text-color: #121212;
+  --text-color: #23252A;
   --text-color-tinted: #a4a4a4;
 
   --ui-border-color: #a4a4a4;
-  --ui-bg-color: #f8f8f8;
+  --ui-bg-color: #d5d5d5;
   --ui-element: #ebebeb;
   --ui-clip-size: 5px;
   --ui-clip: polygon(var(--ui-clip-size) 0, 100% 0, 100% calc(100% - var(--ui-clip-size)), calc(100% - var(--ui-clip-size)) 100%, 0 100%, 0 var(--ui-clip-size));
+  --ui-clip-left: polygon(var(--ui-clip-size) 0, 100% 0, 100% 100%, 0 100%, 0 var(--ui-clip-size));
 }
 
 :root.dark-theme {
-  --bg-color: #121212;
+  --bg-color: #23252A;
+  --ui-bg-color: #23252A;
 
   --text-color: #fff;
   --text-color-tinted: #808080;

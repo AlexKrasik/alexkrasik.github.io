@@ -55,7 +55,7 @@ const {t} = useI18n({
       </li>
       <li>
         <div class="fact">Frontend developer at AXIS-IT</div>
-        <div class="timespan">2021 - {{ t("present") }}</div>
+        <div class="timespan">2021 - 2026</div>
       </li>
     </ul>
 
@@ -71,6 +71,7 @@ const {t} = useI18n({
     <h2>{{ t("title_skills") }}</h2>
     <ul class="cv-row">
       <li>JavaScript</li>
+      <li>TypeScript</li>
       <li>VUE3</li>
       <li>HTML</li>
       <li>CSS</li>

@@ -1,61 +1,17 @@
 <script setup>
-import { computed } from "vue";
-import { useI18n } from "vue-i18n";
+import {useI18n} from "vue-i18n";
 
 const props = defineProps({
   title: {
     default: "__title__",
-    type: String,
   },
-  link: {
-    default: location.href,
-    type: String,
-  },
-  site: {
-    type: String,
-  },
+  links: [],
   description: {
-    type: Object,
-    default: () => {
-      return {
-        en: "",
-        uk: "",
-      };
-    },
-  },
-  logo: {
-    type: String,
-  },
-  pic: {
-    type: String,
-  },
-  pic_x2: {
-    type: String,
-  },
-  pic_x3: {
-    type: String,
-  },
-  pic_webp: {
-    type: String,
-  },
-  pic_webp_x2: {
-    type: String,
-  },
-  pic_webp_x3: {
-    type: String,
-  },
-});
-
-const siteName = computed(() => {
-  if (props.site) {
-    return props.site;
-  } else {
-    const url = new URL(props.link);
-    return url.host;
+    en: "",
+    uk: "",
   }
 });
-
-const { t } = useI18n({
+const {t} = useI18n({
   messages: {
     en: {
       description: props.description.en,
@@ -65,18 +21,16 @@ const { t } = useI18n({
     },
   },
 });
+
 </script>
 <template>
   <div class="portfolio-item">
+    <div class="portfolio-item__name">{{ title }}</div>
     <div class="portfolio-item__info">
-      <div class="portfolio-item__name">{{ title }}</div>
-      <!--      <div class="portfolio-item__logo">-->
-      <!--        <img :src="logo" :alt="title" />-->
-      <!--      </div>-->
       <div class="portfolio-item__description">{{ t("description") }}</div>
-      <a target="_blank" :href="link" class="portfolio-item__link">
-        {{ siteName }}
-      </a>
+      <div class="portfolio-item__links">
+        <a v-for="link in links" :href="link.link" :target="link.target">{{ link.site || link.link }}</a>
+      </div>
     </div>
   </div>
 </template>
@@ -84,11 +38,19 @@ const { t } = useI18n({
 <style lang="scss" scoped>
 .portfolio-item {
   display: grid;
+  grid-template-rows: min-content 1fr;
+  clip-path: var(--ui-clip-left);
+  border: 1px solid var(--text-color);
 }
 
 .portfolio-item__info {
-  display: grid;
+  display: flex;
+  flex-direction: column;
+
   gap: 5px;
+  padding: 15px;
+  height: 100%;
+  align-self: start;
 }
 
 .portfolio-item__logo {
@@ -104,18 +66,25 @@ const { t } = useI18n({
 
 .portfolio-item__name {
   padding: 5px 15px;
-  clip-path: var(--ui-clip);
   background-color: var(--text-color);
   color: var(--bg-color);
 }
 
-.portfolio-item__link {
+.portfolio-item__links {
+  display: flex;
+  gap: 15px;
+  margin-top: auto;
+}
+
+.portfolio-item__links a {
   display: inline-flex;
   align-items: center;
   gap: 5px;
+  font-size: .7em;
+  margin-top: 5px;
 }
 
-.portfolio-item__link::after {
+.portfolio-item__links a::after {
   content: "";
   display: inline-block;
   mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='currentColor' class='bi bi-box-arrow-up-right' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8.636 3.5a.5.5 0 0 0-.5-.5H1.5A1.5 1.5 0 0 0 0 4.5v10A1.5 1.5 0 0 0 1.5 16h10a1.5 1.5 0 0 0 1.5-1.5V7.864a.5.5 0 0 0-1 0V14.5a.5.5 0 0 1-.5.5h-10a.5.5 0 0 1-.5-.5v-10a.5.5 0 0 1 .5-.5h6.636a.5.5 0 0 0 .5-.5'/%3E%3Cpath fill-rule='evenodd' d='M16 .5a.5.5 0 0 0-.5-.5h-5a.5.5 0 0 0 0 1h3.793L6.146 9.146a.5.5 0 1 0 .708.708L15 1.707V5.5a.5.5 0 0 0 1 0z'/%3E%3C/svg%3E");

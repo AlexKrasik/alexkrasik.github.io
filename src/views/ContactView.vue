@@ -1,6 +1,11 @@
+<script setup>
+import MainLayout from "@/layouts/MainLayout.vue";
+</script>
+
 <template>
   <div class="container">
-    <h1>contacts</h1>
+    <MainLayout>
+      <h1>contacts</h1>
+    </MainLayout>
   </div>
 </template>
-<script setup lang="ts"></script>

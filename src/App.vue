@@ -1,30 +1,16 @@
 <script setup>
 import "@/assets/transition.scss";
-import AppHeader from "@/components/layout/AppHeader.vue";
-import AppFooter from "@/components/layout/AppFooter.vue";
 
-import { ref } from "vue";
-import { RouterView, useRouter } from "vue-router";
+import {RouterView} from "vue-router";
 
-const pageTransition = ref("slideleft");
-
-const router = useRouter();
-router.afterEach((to, from) => {
-  pageTransition.value =
-    to.meta.pos > from.meta.pos ? "slideleft" : "slideright";
-});
 </script>
 
 <template>
-  <AppHeader />
-  <RouterView v-slot="{ Component }">
-    <main>
-      <Transition :name="pageTransition">
-        <component :is="Component" />
-      </Transition>
-    </main>
-  </RouterView>
-  <AppFooter />
+  <Transition :name="slideup">
+    <RouterView v-slot="{ Component }">
+      <component :is="Component"/>
+    </RouterView>
+  </Transition>
 </template>
 
 <style lang="scss">
