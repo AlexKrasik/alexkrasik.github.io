@@ -1,0 +1,1 @@
+import{o as e,c as a,f as s,w as o,g as n,a as c}from"./index-5e1c3863.js";const r={class:"container"},u={__name:"ContactView",setup(_){return(l,t)=>(e(),a("div",r,[s(n,null,{default:o(()=>[...t[0]||(t[0]=[c("h1",null,"contacts",-1)])]),_:1})]))}};export{u as default};
