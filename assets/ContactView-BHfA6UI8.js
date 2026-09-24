@@ -1,0 +1,1 @@
+import{C as e,O as t,c as n,f as r,l as i,n as a}from"./index-c-vPusD2.js";var o={class:`container`},s={__name:`ContactView`,setup(s){return(s,c)=>(e(),i(`div`,o,[r(a,null,{default:t(()=>[...c[0]||=[n(`h1`,null,`contacts`,-1)]]),_:1})]))}};export{s as default};
