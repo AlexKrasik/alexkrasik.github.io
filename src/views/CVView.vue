@@ -1,8 +1,9 @@
 <script setup>
 import {useI18n} from "vue-i18n";
+import {ref} from "vue";
+import {useScramble} from "@/composables/scramble";
 
 const {t} = useI18n({
-  locale: "uk",
   messages: {
     en: {
       page_title: "cv",
@@ -16,8 +17,8 @@ const {t} = useI18n({
       title_edu: "education",
       title_skills: "skills",
       present: "present",
-      name: "Oleksand Krasikov",
-      bday: "01 jun 1992"
+      name: "Oleksandr Krasikov",
+      birthday: "01 jun 1992"
     },
     uk: {
       education: {
@@ -31,20 +32,24 @@ const {t} = useI18n({
       title_skills: "навички",
       present: "дотепер",
       name: "Олександр Красіков",
-      bday: "01 чер 1992"
+      birthday: "01 чер 1992"
     },
   },
 });
+
+const containerEl = ref(null);
+useScramble(containerEl, {selector: 'h2, ul'})
+
 </script>
 
 <template>
-  <div class="container">
+  <div class="container" ref="containerEl">
     <h1>{{ t("page_title") }}</h1>
 
     <h2>{{ t("title_info") }}</h2>
     <ul class="cv-list">
-      <li><span class="fact">name:</span> {{ t("name") }}</li>
-      <li><span class="fact">birth:</span> {{ t("bday") }}</li>
+      <li><span class="fact">name: </span> {{ t("name") }}</li>
+      <li><span class="fact">birth: </span> {{ t("birthday") }}</li>
     </ul>
 
     <h2>{{ t("title_work") }}</h2>
@@ -63,7 +68,7 @@ const {t} = useI18n({
     <ul class="cv-list">
       <li>
         <div class="fact">{{ t("education.degree") }}</div>
-        <div class="sub">{{ t("education.place") }}</div>
+        <div class="sub" id="test">{{ t("education.place") }}</div>
         <span class="timespan">2009-2013</span>
       </li>
     </ul>
@@ -87,7 +92,7 @@ const {t} = useI18n({
 
 .cv-list {
   margin: 15px 0;
-  padding-left: 30px;
+  padding-left: 0;
   display: flex;
   flex-direction: column;
   gap: 5px;
@@ -99,7 +104,7 @@ const {t} = useI18n({
 
 .cv-row {
   margin: 15px 0;
-  padding-left: 30px;
+  padding-left: 0;
   gap: 5px;
 }
 
@@ -120,10 +125,14 @@ const {t} = useI18n({
 }
 
 h2 {
+  position: relative;
   text-transform: uppercase;
 }
 
 h2::before {
+  position: absolute;
   content: "_";
+  right: 100%;
+  bottom: 0;
 }
 </style>

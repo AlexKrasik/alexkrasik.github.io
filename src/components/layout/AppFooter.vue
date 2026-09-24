@@ -5,7 +5,7 @@
   </footer>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 footer {
   padding: 30px 0;
   margin-top: auto;

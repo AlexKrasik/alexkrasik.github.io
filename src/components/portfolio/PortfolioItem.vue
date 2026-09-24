@@ -1,61 +1,51 @@
 <script setup>
+import {computed, onBeforeMount, onMounted, ref} from "vue";
 import {useI18n} from "vue-i18n";
+import {useScramble} from "@/composables/scramble";
 
 const props = defineProps({
   title: {
     default: "__title__",
   },
-  links: [],
-  description: {
-    en: "",
-    uk: "",
-  }
+  links: Array,
+  description: Object,
 });
-const {t} = useI18n({
-  messages: {
-    en: {
-      description: props.description.en,
-    },
-    uk: {
-      description: props.description.uk,
-    },
-  },
-});
+
+// Per-item copy lives on the prop, not in i18n catalogs — index by active locale
+const {locale} = useI18n({useScope: "global"});
+const descriptionText = computed(
+    () => props.description?.[locale.value] ?? props.description?.en ?? ""
+);
+
+// const itemEL = ref(null);
+// useScramble(itemEL, {selector: '.portfolio-item__description'});
 
 </script>
 <template>
-  <div class="portfolio-item">
+  <li class="portfolio-item" ref="itemEL">
     <div class="portfolio-item__name">{{ title }}</div>
     <div class="portfolio-item__info">
-      <div class="portfolio-item__description">{{ t("description") }}</div>
+      <div class="portfolio-item__description">{{ descriptionText }}</div>
       <div class="portfolio-item__links">
         <a v-for="link in links" :href="link.link" :target="link.target">{{ link.site || link.link }}</a>
       </div>
     </div>
-  </div>
+  </li>
 </template>
 
-<style lang="scss" scoped>
+<style scoped>
 .portfolio-item {
   display: grid;
   grid-template-rows: min-content 1fr;
-  clip-path: var(--ui-clip-left);
-  border: 1px solid var(--text-color);
 }
 
 .portfolio-item__info {
   display: flex;
   flex-direction: column;
-
   gap: 5px;
-  padding: 15px;
+  padding: 15px 0 0;
   height: 100%;
   align-self: start;
-}
-
-.portfolio-item__logo {
-  padding: 15px;
-  height: 100px;
 }
 
 .portfolio-item__logo img {
@@ -65,9 +55,11 @@ const {t} = useI18n({
 }
 
 .portfolio-item__name {
-  padding: 5px 15px;
-  background-color: var(--text-color);
-  color: var(--bg-color);
+  width: fit-content;
+  /* padding: 5px 15px; */
+  font-weight: 800;
+  padding-right: 15px;
+  border-bottom: 1px solid var(--ui-border-color);
 }
 
 .portfolio-item__links {

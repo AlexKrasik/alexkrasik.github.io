@@ -1,58 +1,86 @@
 <script setup>
-import { RouterLink } from "vue-router";
-import { useI18n } from "vue-i18n";
+import {RouterLink} from "vue-router";
+import {useI18n} from "vue-i18n";
 import ToggleInput from "@/components/ui/ToggleInput.vue";
+import {onMounted, ref, watch} from "vue";
+import {useScramble} from "@/composables/scramble";
 
-const i18n = useI18n({});
+const i18n = useI18n({
+  messages: {
+    en: {'frontend developer': "frontend developer"},
+    uk: {'frontend developer': "фронтенд розробник"}
+  }
+});
+
+const {locale} = useI18n({useScope: "global"});
 
 function toggleDarkMode(e) {
-  document.documentElement.className = e.target.checked
-    ? "dark-theme"
-    : "light-theme";
+  const theme = e.target.checked ? "dark" : "light";
+  localStorage.setItem("preferTheme", theme);
+  document.documentElement.className = `${theme}-theme`;
 }
 
-function toggleLanguage(e) {
-  i18n.locale.value = e.target.checked ? "en" : "uk";
+const savedTheme = localStorage.getItem("preferTheme");
+const browserTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? 'dark' : 'light';
+const preferDark = savedTheme ? savedTheme === "dark" : browserTheme === "dark";
+
+function toggleLocale(e) {
+  locale.value = e.target.checked ? "uk" : "en";
+  localStorage.setItem("preferLocale", locale.value);
 }
+
+watch(locale, () => document.dispatchEvent(new Event("localeChange")), {flush: 'pre]'});
+
+const savedLocale = localStorage.getItem("preferLocale");
+const preferLocale = navigator.language === 'uk' ? 'uk' : 'en';
+const preferUK = savedLocale ? savedLocale === 'uk' : preferLocale === 'uk';
+const headerEl = ref(null);
+
+useScramble(headerEl, {selector: ".header-subtitle"});
+
 </script>
 <template>
-  <header class="header">
+  <header class="header" ref="headerEl">
     <div class="container">
       <div class="header-content">
         <div class="header-title">
           alexKrasik
-          <div class="header-subtitle">frontend developer</div>
+          <div class="header-subtitle">{{ i18n.t("frontend developer") }}</div>
         </div>
 
         <nav class="header-nav">
           <RouterLink to="/projects">projects</RouterLink>
           <RouterLink to="/cv">cv</RouterLink>
-<!--          <RouterLink to="/contacts">contacts</RouterLink>-->
         </nav>
 
         <div class="header-options">
           <ToggleInput
-            id="darkModeToggle"
-            truePic="/img/icons/darkMode.svg"
-            falsePic="/img/icons/lightMode.svg"
-            @change="toggleDarkMode"
+              truePic="/img/icons/darkMode.svg"
+              falsePic="/img/icons/lightMode.svg"
+              :checked="preferDark"
+              @change="toggleDarkMode"
           />
           <ToggleInput
-            id="toggleLang"
-            truePic="/img/lang/en.svg"
-            falsePic="/img/lang/uk.svg"
-            @change="toggleLanguage"
+              falsePic="/img/lang/en.svg"
+              truePic="/img/lang/uk.svg"
+              :checked="preferUK"
+              @change="toggleLocale"
           />
         </div>
       </div>
     </div>
   </header>
 </template>
-<style lang="scss" scoped>
+<style scoped>
 .header {
-  padding: 30px 0;
-  border-bottom: 1px solid var(--tertiary-color);
-  transition: border-color 300ms;
+  top: 0;
+  position: sticky;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--ui-border-color);
+  backdrop-filter: blur(10px);
+  background-color: var(--bg-color);
+  z-index: 1000;
+  transition: 250ms;
 }
 
 .header-content {
@@ -67,20 +95,23 @@ function toggleLanguage(e) {
   justify-self: start;
   text-align: left;
   font-weight: 800;
-  font-size: 36px;
-  line-height: 1;
+  font-size: 1.5em;
+  line-height: 1.2;
 }
 
 .header-subtitle {
   font-weight: 300;
-  font-size: 18px;
+  font-size: .7em;
+  color: var(--text-color-tinted);
+  text-transform: lowercase;
 }
 
 .header-nav {
   grid-area: nav;
   display: flex;
   gap: 5px;
-  margin-left: auto;
+  align-self: end;
+  justify-self: end;
 }
 
 .header-nav a {
@@ -103,22 +134,25 @@ function toggleLanguage(e) {
   display: flex;
   gap: 5px;
   justify-self: end;
+  align-self: end;
+  justify-self: end;
 }
 
 @media (max-width: 767px) {
   .header {
     padding: 15px 0;
   }
+
   .header-content {
-    grid-template-areas: "title options" "nav nav";
-    gap: 20px;
+    grid-template-areas: "title title" "nav options";
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
   }
-  .header-options {
-    flex-direction: column;
-  }
+
   .header-nav {
     width: 100%;
-    justify-content: center;
+    justify-content: start;
+
   }
 }
 </style>

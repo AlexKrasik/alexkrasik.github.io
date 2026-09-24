@@ -1,19 +1,24 @@
 <script setup>
-import "@/assets/transition.scss";
+import "@/assets/transition.css";
+import {onBeforeRouteUpdate, RouterView} from "vue-router";
 
-import {RouterView} from "vue-router";
+const props = defineProps({theme: String});
+
+document.documentElement.className = `${props.theme}-theme`;
+
+onBeforeRouteUpdate(() => {
+  window.scrollTo(0, 0);
+});
 
 </script>
 
 <template>
-  <Transition :name="slideup">
-    <RouterView v-slot="{ Component }">
-      <component :is="Component"/>
-    </RouterView>
-  </Transition>
+  <RouterView v-slot="{ Component }">
+    <component :is="Component"/>
+  </RouterView>
 </template>
 
-<style lang="scss">
+<style>
 #app {
   display: flex;
   flex-direction: column;

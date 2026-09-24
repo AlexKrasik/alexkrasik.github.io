@@ -1,14 +1,14 @@
 <script setup>
-import { computed, onMounted, ref } from "vue";
+import {computed, onMounted, ref} from "vue";
 
 const emit = defineEmits(["change"]);
 const props = defineProps({
-  id: { required: true, type: String },
-  falsePic: { required: false, type: String },
-  truePic: { required: false, type: String },
+  falsePic: {required: false, type: String},
+  truePic: {required: false, type: String},
+  checked: {required: false, type: Boolean, default: false},
 });
 
-const state = ref(false);
+const state = ref(props.checked);
 
 const cssProps = computed(() => {
   return {
@@ -28,23 +28,13 @@ function updateInput(event) {
 </script>
 
 <template>
-  <label
-    class="toggleInput"
-    :for="id"
-    :class="state ? 'true' : 'false'"
-    :style="cssProps"
-  >
-    <input
-      type="checkbox"
-      @change="updateInput"
-      :id="props.id"
-      v-model="state"
-    />
+  <label class="toggleInput" :style="cssProps">
+    <input type="checkbox" @change="updateInput" v-model="state"/>
     <span></span>
   </label>
 </template>
 
-<style scoped lang="scss">
+<style scoped>
 .toggleInput {
   position: relative;
   display: flex;
@@ -72,7 +62,7 @@ function updateInput(event) {
   transition: 250ms;
 }
 
-.toggleInput.false::before {
+.toggleInput::before {
   -webkit-mask-image: var(--false-pic-url);
   -webkit-mask-position: left;
 
@@ -80,7 +70,7 @@ function updateInput(event) {
   mask-position: 0;
 }
 
-.toggleInput.true::before {
+.toggleInput:has(:checked)::before {
   -webkit-mask-image: var(--true-pic-url);
   -webkit-mask-position: right;
 
@@ -103,12 +93,14 @@ function updateInput(event) {
   clip-path: var(--ui-clip);
 }
 
-.toggleInput.true span {
-  left: 0;
-}
-
-.toggleInput.false span {
+.toggleInput span {
   left: 100%;
   transform: translateX(-100%);
 }
+
+.toggleInput :checked + span {
+  left: 0;
+  transform: translateX(0);
+}
+
 </style>
