@@ -1,4 +1,4 @@
-import Komp from "./komp.js";
+import Komp from "https://cdn.jsdelivr.net/gh/AlexKrasik/KompJS@master/dist/komp.js";
 
 class UserCard extends Komp {
     get html() {

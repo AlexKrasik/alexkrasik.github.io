@@ -15,39 +15,27 @@ const router = createRouter({
                     alias: "/projects",
                     name: "projects",
                     component: PortfolioView,
-                    meta: {
-                        pos: 0,
-                    },
+
                 },
                 {
                     path: "cv",
                     name: "cv",
                     component: () => import("../views/CVView.vue"),
-                    meta: {
-                        pos: 1,
-                    },
+
                 },
                 {
                     path: "contacts",
                     name: "contacts",
                     component: () => import("../views/ContactView.vue"),
-                    meta: {
-                        pos: 2,
-                    },
+
                 },
-            ],
-        },
-        {
-            path: "/",
-            component: CustomLayout,
-            children: [
                 {
                     path: "kompjs",
                     name: 'kompJS',
                     component: () => import("../views/KompPlaygroundView.vue"),
                 }
-            ]
-        }
+            ],
+        },
     ],
 });
 export default router;
