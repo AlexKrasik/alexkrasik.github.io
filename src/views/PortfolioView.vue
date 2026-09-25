@@ -36,11 +36,12 @@ onMounted(async () => {
 
 <style scoped>
 .portfolio-category {
+  display: grid;
   margin-bottom: 60px;
+  grid-template-columns: min-content 1fr;
 }
 
 .portfolio-category__title {
-  margin: 0 auto 15px;
   text-transform: uppercase;
   position: relative;
   display: inline-block;
@@ -58,6 +59,12 @@ onMounted(async () => {
   color: var(--text-color-tinted);
   text-transform: lowercase;
   padding-left: 1em;
+  font-size: 0.8em;
+  align-self: center;
+}
+
+.portfolio-category__description::before {
+  content: "//";
 }
 
 .portfolio-category__list {
@@ -65,18 +72,26 @@ onMounted(async () => {
   grid-template-columns: 100%;
   gap: 30px;
   padding-left: 0;
-  margin-bottom: 30px;
+  margin: 1em 0 1em;
+  grid-column: 1 / 3;
 }
 
 .portfolio-category:last-child {
   margin-bottom: 0;
 }
 
-.portfolio-category h2 {
-  margin: 30px auto 15px;
-}
-
 @media (max-width: 767px) {
+
+  .portfolio-category__title {
+    margin: 0;
+  }
+
+  .portfolio-category__description {
+    padding: 0;
+    grid-column: 1 / 3;
+    margin-bottom: 1em;
+  }
+
   .portfolio-category__list {
     grid-template-columns: 100%;
     gap: 30px;

@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:ital,wght@0,100..900;1,100..900&display=swap');
+@import url('null.css');
+
+:root {
+  --bg-color: #eeeeee;
+
+  --text-color: #23252A;
+  --text-color-tinted: #656565;
+
+  --ui-border-color: #a4a4a4;
+  --ui-bg-color: #d5d5d5;
+  --ui-element: #ebebeb;
+  --ui-clip-size: 5px;
+  --ui-clip: polygon(var(--ui-clip-size) 0, 100% 0, 100% calc(100% - var(--ui-clip-size)), calc(100% - var(--ui-clip-size)) 100%, 0 100%, 0 var(--ui-clip-size));
+  --ui-clip-left: polygon(var(--ui-clip-size) 0, 100% 0, 100% 100%, 0 100%, 0 var(--ui-clip-size));
+}
+
+:root.dark-theme {
+  --bg-color: #23252A;
+  --ui-bg-color: #23252A;
+
+  --text-color: #fff;
+  --text-color-tinted: #808080;
+}
+
+body {
+  font-family: "Geist Mono", monospace;
+  scroll-behavior: smooth;
+  margin-right: calc(-1 * (100vw - 100%));
+  overflow-x: hidden;
+}
+
+main {
+  position: relative;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  padding: 15px 30px;
+  margin: 0 auto;
+}
+
+a {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+h1 {
+  margin-bottom: 30px;
+  font-size: 3em;
+  font-weight: 800;
+}
+
+h1::before {
+  content: "/";
+
+}
