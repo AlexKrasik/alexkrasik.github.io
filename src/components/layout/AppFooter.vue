@@ -45,6 +45,7 @@ footer {
   transition: border-color 300ms;
   position: relative;
   opacity: .25;
+  overflow: hidden;
 }
 
 .kitty {
