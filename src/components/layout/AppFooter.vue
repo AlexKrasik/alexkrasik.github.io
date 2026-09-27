@@ -25,8 +25,6 @@ function scrollTop() {
 </script>
 <template>
   <footer>
-    <div class="container">
-    </div>
     <pre class="kitty" @click="scrollTop">
 <span class="meow">{{ clicked ? t('meow') : "    " }}</span>
        /\_/\
@@ -46,6 +44,7 @@ footer {
   position: relative;
   opacity: .25;
   overflow: hidden;
+  padding-top: 4em;
 }
 
 .kitty {
