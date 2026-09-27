@@ -1,4 +1,4 @@
-import Komp from "./komp.js";
+import Komp from "https://cdn.jsdelivr.net/gh/AlexKrasik/KompJS@master/dist/komp.js";
 
 export class UserCard extends Komp {
     get html() {
@@ -7,9 +7,6 @@ export class UserCard extends Komp {
                    <div> Age: {{age}} </div>
                    <div> City: {{city}} </div>
                 </div>`;
-    }
-    constructor(a,b) {
-        super(a,b);
     }
 }
 
