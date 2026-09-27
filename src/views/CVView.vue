@@ -1,7 +1,9 @@
 <script setup>
 import {useI18n} from "vue-i18n";
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import {useScramble} from "@/composables/scramble";
+import Spoiler from "@/components/ui/Spoiler.vue";
+import feather from 'feather-icons';
 
 const {t} = useI18n({
   messages: {
@@ -16,8 +18,11 @@ const {t} = useI18n({
       title_work: "experience",
       title_edu: "education",
       title_skills: "skills",
+      title_contact: "contacts",
       present: "present",
+      label_name: "name",
       name: "Oleksandr Krasikov",
+      label_birthday: "birth",
       birthday: "01 jun 1992"
     },
     uk: {
@@ -31,7 +36,9 @@ const {t} = useI18n({
       title_edu: "освіта",
       title_skills: "навички",
       present: "дотепер",
+      label_name: "ім'я",
       name: "Олександр Красіков",
+      label_birthday: "народжений",
       birthday: "01 чер 1992"
     },
   },
@@ -40,6 +47,9 @@ const {t} = useI18n({
 const containerEl = ref(null);
 useScramble(containerEl, {selector: 'h2, ul'})
 
+onMounted(() => {
+  feather.replace({width: 16, height: 16});
+})
 </script>
 
 <template>
@@ -48,8 +58,8 @@ useScramble(containerEl, {selector: 'h2, ul'})
 
     <h2>{{ t("title_info") }}</h2>
     <ul class="cv-list">
-      <li><span class="fact">name: </span> {{ t("name") }}</li>
-      <li><span class="fact">birth: </span> {{ t("birthday") }}</li>
+      <li><span class="fact">{{ t("label_name") }}: </span> {{ t("name") }}</li>
+      <li><span class="fact">{{ t("label_birthday") }}: </span> {{ t("birthday") }}</li>
     </ul>
 
     <h2>{{ t("title_work") }}</h2>
@@ -81,6 +91,26 @@ useScramble(containerEl, {selector: 'h2, ul'})
       <li>HTML</li>
       <li>CSS</li>
       <li>REST APIs</li>
+    </ul>
+
+    <h2>{{ t("title_contact") }}</h2>
+    <ul class="cv-list">
+      <li class="contact_item">
+        <i data-feather="linkedin"></i>
+        <a href="https://www.linkedin.com/in/alexkrasik/" target="_blank">alexkrasik</a>
+      </li>
+      <li class="contact_item">
+        <i data-feather="send"></i>
+        <Spoiler>
+          <a href="https://t.me/alexKrasik" target="_blank">@alexkrasik</a>
+        </Spoiler>
+      </li>
+      <li class="contact_item">
+        <i data-feather="mail"></i>
+        <Spoiler>
+          <a href="mailto:alexkrasik@gmail.com" target="_blank">alexkrasik@gmail.com</a>
+        </Spoiler>
+      </li>
     </ul>
   </div>
 </template>
@@ -114,6 +144,12 @@ useScramble(containerEl, {selector: 'h2, ul'})
 
 .cv-row li:not(:last-child)::after {
   content: ", ";
+}
+
+.contact_item {
+  display: flex;
+  align-items: center;
+  gap: .5em;
 }
 
 .fact {

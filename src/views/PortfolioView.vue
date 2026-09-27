@@ -1,20 +1,26 @@
 <script setup>
 import PortfolioItem from "../components/portfolio/PortfolioItem.vue";
+import AsciiThrobber from "@/components/ui/AsciiThrobber.vue";
 import {nextTick, onMounted, ref} from "vue";
 import {useScramble} from "@/composables/scramble";
 import {useI18n} from "vue-i18n";
 import {loadProjects} from "@/lib/portfolio";
 
 const categories = ref([]);
+const isLoading = ref(true);
 
 const containerEL = ref();
 const {prepare} = useScramble(containerEL, {selector: ".portfolio-item__description, .portfolio-category__description"})
 const {locale} = useI18n({useScope: "global"});
 
 onMounted(async () => {
-  categories.value = await loadProjects();
-  await nextTick();
-  prepare();
+  try {
+    categories.value = await loadProjects();
+    await nextTick();
+    prepare();
+  } finally {
+    isLoading.value = false;
+  }
 });
 
 </script>
@@ -22,19 +28,26 @@ onMounted(async () => {
 <template>
   <div class="container" ref="containerEL">
     <h1>projects</h1>
-    <section v-for="category in categories" class="portfolio-category">
-      <h2 class="portfolio-category__title">{{ category.title }}</h2>
-      <span class="portfolio-category__description">{{
-          category.description?.[locale] ?? category.description?.en ?? ""
-        }}</span>
-      <ol class="portfolio-category__list">
-        <PortfolioItem v-for="project in category.project" v-bind="project"/>
-      </ol>
-    </section>
+    <AsciiThrobber v-if="isLoading" class="portfolio-loading"/>
+    <template v-else>
+      <section v-for="category in categories" class="portfolio-category">
+        <h2 class="portfolio-category__title">{{ category.title }}</h2>
+        <span class="portfolio-category__description">{{
+            category.description?.[locale] ?? category.description?.en ?? ""
+          }}</span>
+        <ol class="portfolio-category__list">
+          <PortfolioItem v-for="project in category.project" v-bind="project"/>
+        </ol>
+      </section>
+    </template>
   </div>
 </template>
 
 <style scoped>
+.portfolio-loading {
+  margin-top: 0.5em;
+}
+
 .portfolio-category {
   display: grid;
   margin-bottom: 60px;

@@ -17,8 +17,8 @@ const descriptionText = computed(
     () => props.description?.[locale.value] ?? props.description?.en ?? ""
 );
 
-// const itemEL = ref(null);
-// useScramble(itemEL, {selector: '.portfolio-item__description'});
+const itemEL = ref(null);
+useScramble(itemEL, {selector: '.portfolio-item__description'});
 
 </script>
 <template>
