@@ -1,0 +1,1 @@
+import{c as e,d as t,g as n,o as r,p as i,t as a}from"./index-BLVLe_wC.js";var o={class:`container`},s={__name:`ContactView`,setup(s){return(s,c)=>(i(),e(`div`,o,[t(a,null,{default:n(()=>[...c[0]||=[r(`h1`,null,`contacts`,-1)]]),_:1})]))}};export{s as default};
